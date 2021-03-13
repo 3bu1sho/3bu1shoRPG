@@ -27,7 +27,9 @@ public class MapManager3 : MonoBehaviour
               
             KAKUSHI,
 
-            kANTOKUKAN,
+            KANTOKUKAN,
+
+        AFTERBOSS,
     }
 
     FieldType type = FieldType.IRIGUCHI;
@@ -93,5 +95,37 @@ public class MapManager3 : MonoBehaviour
     {
         type = FieldType.HEYA103;
         //AnyButton();
+    }
+
+    public void OnToKAKUSHIButton()
+    {
+        type = FieldType.KAKUSHI;
+        //AnyButton();
+    }
+
+    public void OnToKANTOKUKANButton()
+    {
+        type = FieldType.KANTOKUKAN;
+        //AnyButton();
+    }
+
+
+
+    public GameObject IriguchiButton;
+    public GameObject TanimaButton;
+    public GameObject ShurakuButton;
+    public GameObject KojoButton;
+    public GameObject HirobaButton;
+    public GameObject RoyaButton;
+    public GameObject HEYA101Button;
+    public GameObject HEYA102Button;
+    public GameObject HEYA103Button;
+    public GameObject KakushiButton;
+    public GameObject KantokukanButton;
+
+    public void OnBossBattleButton()
+    {
+        type = FieldType.AFTERBOSS;
+        /*quest.ToBossBattle(); */
     }
 }
