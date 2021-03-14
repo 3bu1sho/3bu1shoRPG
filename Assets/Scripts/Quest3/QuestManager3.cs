@@ -10,6 +10,7 @@ public class QuestManager3 : MonoBehaviour
     public GameObject questBG;
     public TakarabakoManager takarabako;
     public GameObject EnemyPrehab;
+    public StageUIManager stageUI;
     public GameObject BossEnemyPrehab;
 
     public BattleManager battleManager;
@@ -35,7 +36,7 @@ public class QuestManager3 : MonoBehaviour
     private void Start()
     {
         // SoundManager.instance.PlayBGM("Quest3");
-        DialogTextManager.instance.SetScenarios(new string[] { "廃墟についた。\n辺りには誰もいないことが明白なのに、\n確かな殺気を感じる。" });
+        DialogTextManager.instance.SetScenarios(new string[] { "廃墟についた。\n辺りには誰もいないというのに、\n確かな殺気を感じる。" });
 
 
     }
@@ -83,7 +84,7 @@ public class QuestManager3 : MonoBehaviour
     IEnumerator Seaching()
     {
 
-        DialogTextManager.instance.SetScenarios(new string[] { "自分は吹雪を突き進む。" });
+        DialogTextManager.instance.SetScenarios(new string[] { "自分は瓦礫の道を突き進む。" });
         questBG.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 1f)
     .OnComplete(() => questBG.transform.localScale = new Vector3(1, 1, 1));
 
@@ -194,7 +195,7 @@ public class QuestManager3 : MonoBehaviour
     {
         if (PlayerManager.instance.bossCount3 > 0)
         {
-            SaveInt.instance.princess += 3;
+            SaveInt.instance.princess += 5;
             QuestClear();
         }
 
@@ -215,7 +216,7 @@ public class QuestManager3 : MonoBehaviour
 
     }
 
-    void QuestClear()
+    public void QuestClear()
     {
         PlayerManager.instance.maxHp += 10;
         PlayerManager.instance.at += 10;
@@ -246,6 +247,11 @@ public class QuestManager3 : MonoBehaviour
         {
             DialogTextManager.instance.SetScenarios(new string[] { "---負けてたまるか。\nそう自分に言い聞かせる。\nせめて気持ちだけは、強くあれ。" });
         }
+    }
+
+    public void CallHideButton()
+    {
+        stageUI.HideButtons();
     }
 
 }
