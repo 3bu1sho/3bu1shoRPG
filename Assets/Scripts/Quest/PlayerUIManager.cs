@@ -75,6 +75,7 @@ public class PlayerUIManager : MonoBehaviour
         PlayerManager.instance.strength = 5;
         PlayerManager.instance.bossCount = 0;
         PlayerManager.instance.bossCount2 = 0;
+        PlayerManager.instance.bossCount3 = 0;
         PlayerManager.instance.magaChike = 150;
         PlayerManager.instance.maousyori = 0;
 

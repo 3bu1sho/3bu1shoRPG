@@ -60,7 +60,7 @@ public class QuestManager : MonoBehaviour
 
         DialogTextManager.instance.SetScenarios(new string[] { "自分は森を突き進む。" });
         questBG.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 1f)
-    .OnComplete(() => questBG.transform.localScale = new Vector3(1, 1, 1));
+        .OnComplete(() => questBG.transform.localScale = new Vector3(1, 1, 1));
 
         SpriteRenderer questBGSpriteRenderer = questBG.GetComponent<SpriteRenderer>();
         questBGSpriteRenderer.DOFade(0, 1f)

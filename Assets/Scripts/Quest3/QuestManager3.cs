@@ -10,8 +10,10 @@ public class QuestManager3 : MonoBehaviour
     public GameObject questBG;
     public TakarabakoManager takarabako;
     public GameObject EnemyPrehab;
-    public StageUIManager stageUI;
+    public StageUIManager3 stageUI;
     public GameObject BossEnemyPrehab;
+    public EncountManager encount;
+
 
     public BattleManager battleManager;
     public EnemyUIManager enemyUI;
@@ -37,6 +39,7 @@ public class QuestManager3 : MonoBehaviour
     {
         // SoundManager.instance.PlayBGM("Quest3");
         DialogTextManager.instance.SetScenarios(new string[] { "廃墟についた。\n辺りには誰もいないというのに、\n確かな殺気を感じる。" });
+        PlayerManager.instance.playerMapCheck = 3;
 
 
     }
@@ -75,7 +78,7 @@ public class QuestManager3 : MonoBehaviour
         HideAllQuest3Button();
 
         TansakuButton.SetActive(true);
-        SHowStageText();
+        // ShowStageText();
         // SoundManager.instance.PlaySE(0);
 
     }
@@ -83,17 +86,19 @@ public class QuestManager3 : MonoBehaviour
 
     IEnumerator Seaching()
     {
+        int random;
+        random = encount.r;
+        Debug.Log(random);
 
-        DialogTextManager.instance.SetScenarios(new string[] { "自分は瓦礫の道を突き進む。" });
+        DialogTextManager.instance.SetScenarios(new string[] { "自分は瓦礫の山を進む。" });
         questBG.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 1f)
-    .OnComplete(() => questBG.transform.localScale = new Vector3(1, 1, 1));
+        .OnComplete(() => questBG.transform.localScale = new Vector3(1, 1, 1));
 
         SpriteRenderer questBGSpriteRenderer = questBG.GetComponent<SpriteRenderer>();
         questBGSpriteRenderer.DOFade(0, 1f)
             .OnComplete(() => questBGSpriteRenderer.DOFade(1, 0));
 
         yield return new WaitForSeconds(1f);
-
 
         if (random < 35)
         {
@@ -104,55 +109,23 @@ public class QuestManager3 : MonoBehaviour
 
         else if (random < 55)
         {
-            HideAllQuest3Button();
-            //stageUI.HideButtons();
+            stageUI.HideButtons();
             takarabako.FindTakarabako();
-        }
-
-        else if (random < 65)
-        {
-            TansakuButton.SetActive(true);
-            machimodoButton.SetActive(true);
-            DialogTextManager.instance.SetScenarios(new string[] { "来た道が見えた！\n引き返すなら今だ" });
-
-        }
-
-        else if (random < 80)
-        {
-            DialogTextManager.instance.SetScenarios(new string[] { "刹那、寒気とは違う寒気が走る。\n\n*ボス戦になります。\n覚悟は決まりましたか？" });
-            StartCoroutine(PreparationBossBattle());
-
         }
 
         else
         {
-
-            //stageUI.ShowButtons();
-            HideAllQuest3Button();
-            TansakuButton.SetActive(true);
-            SHowStageText();
-
+            stageUI.ShowButtons();
         }
-
-        IEnumerator PreparationBossBattle()
-        {
-            yield return new WaitForSeconds(1f);
-            bossBattleButton.SetActive(true);
-            returnBossBattleButton.SetActive(true);
-        }
-
 
         void EncountEnemy()
         {
             DialogTextManager.instance.SetScenarios(new string[] { "敵だよ！" });
-            //stageUI.HideButtons();
-            HideAllQuest3Button();
-
+            stageUI.HideButtons();
             GameObject enemyObj = Instantiate(EnemyPrehab);
             EnemyManager enemy = enemyObj.GetComponent<EnemyManager>();
             battleManager.Setup(enemy);
             waza.SetUp(enemy);
-
         }
     }
 
@@ -161,7 +134,7 @@ public class QuestManager3 : MonoBehaviour
         SoundManager.instance.PlaySE(0);
 
         HideAllQuest3Button();
-        DialogTextManager.instance.SetScenarios(new string[] { "自分は吹雪を突き進む。" });
+        DialogTextManager.instance.SetScenarios(new string[] { "自分は勇気を振り絞る。" });
         questBG.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 1f)
     .OnComplete(() => questBG.transform.localScale = new Vector3(1, 1, 1));
 
@@ -180,8 +153,7 @@ public class QuestManager3 : MonoBehaviour
 
         SoundManager.instance.PlayBGM("BossBattle3");
 
-        DialogTextManager.instance.SetScenarios(new string[] { "ラストバトル!" });
-        //stageUI.HideButtons();
+        DialogTextManager.instance.SetScenarios(new string[] { "瞬間、悪寒を覚える。\n自分はこの戦いに持てる\n全てを尽くすまで。" });
         HideAllQuest3Button();
 
         GameObject enemyObj = Instantiate(BossEnemyPrehab);
@@ -201,8 +173,8 @@ public class QuestManager3 : MonoBehaviour
 
         else
         {
-            PlayerManager.instance.maxHp += 10;
-            PlayerManager.instance.at += 10;
+            PlayerManager.instance.maxHp += 15;
+            PlayerManager.instance.at += 15;
 
             DialogTextManager.instance.SetScenarios(new string[] { "レベルアップ！\n気持ち強くなった！\n　　　　　　...気がする。" });
             // SoundManager.instance.PlaySE(0);
@@ -218,17 +190,19 @@ public class QuestManager3 : MonoBehaviour
 
     public void QuestClear()
     {
-        PlayerManager.instance.maxHp += 10;
-        PlayerManager.instance.at += 10;
+        PlayerManager.instance.maxHp += 15;
+        PlayerManager.instance.at += 15;
         PlayerManager.instance.magaChike -= 1;
-        DialogTextManager.instance.SetScenarios(new string[] { "クリア！！おめでとう！\n＊プリンセスを3手に入れた！" });
+        DialogTextManager.instance.SetScenarios(new string[] { "クリア！！おめでとう！\n＊プリンセスを5手に入れた！" });
         SoundManager.instance.StopBGM();
         SoundManager.instance.PlaySE(2);
 
         machimodoButton.SetActive(true);
     }
 
-    void SHowStageText()
+    /*
+
+    void ShowStageText()
     {
         random = Random.Range(0, 100);
         if (random > 25)
@@ -248,6 +222,8 @@ public class QuestManager3 : MonoBehaviour
             DialogTextManager.instance.SetScenarios(new string[] { "---負けてたまるか。\nそう自分に言い聞かせる。\nせめて気持ちだけは、強くあれ。" });
         }
     }
+
+        */
 
     public void CallHideButton()
     {

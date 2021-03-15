@@ -30,11 +30,13 @@ public class TakarabakoManager : MonoBehaviour
     public void FindTakarabako()
     {
         DialogTextManager.instance.SetScenarios(new string[] { "たからばこがある。\nどうする？" +
-            "\n　　　,,,開けちゃう？" });
+            "\n　　　...開けちゃう？" });
 
         //map.GetComponent<StageUIManager>().HideButtons();
         StartCoroutine(ShowYesNoButton());
     }
+
+
 
     IEnumerator ShowYesNoButton()
     {
@@ -82,6 +84,8 @@ public class TakarabakoManager : MonoBehaviour
     {
         int random;
         random = r;
+
+        r =-PlayerManager.instance.luck;
         yield return new WaitForSeconds(0.75f);
         Debug.Log(r);
 
@@ -118,6 +122,72 @@ public class TakarabakoManager : MonoBehaviour
             else if (r < 90)
             {
                 DialogTextManager.instance.SetScenarios(new string[] { "痛っ！\n中から氷魔法がとびだした！\nよよよ..." });
+                PlayerManager.instance.hp -= 10;
+
+                SoundManager.instance.PlaySE(1);
+                playerDamagePanel.DOShakePosition(0.3f, 0.5f, 20, 0, false, true);
+
+
+                if (PlayerManager.instance.hp <= 0)
+                {
+                    PlayerManager.instance.hp = 1;
+                }
+
+                PlayerUIManager.instance.UpdateUI(PlayerManager.instance);
+                ToMapOKButton.SetActive(true);
+
+            }
+
+
+
+            else
+            {
+                DialogTextManager.instance.SetScenarios(new string[] { "...　　何もはいってないやんけ！" });
+                ToMapOKButton.SetActive(true);
+            }
+
+        }
+
+        if (PlayerManager.instance.playerMapCheck == 3)
+        {
+            if (r < 36)
+            {
+                DialogTextManager.instance.SetScenarios(new string[] { "エリクサーを手に入れた！\nやったね！" });
+                GetErikusa();
+                SoundManager.instance.PlaySE(2);
+            }
+            else if (r < 53)
+            {
+                GetFutuuBuki();
+            }
+
+            else if (r < 70)
+            {
+                GetFutuuBougu();
+            }
+
+            else if (r < 80)
+            {
+                DialogTextManager.instance.SetScenarios(new string[] { "魔法トラップだ！　鈍い感覚が襲う。\n身体の中の何か大切な部分が\n壊された感覚がある。" });
+                PlayerManager.instance.hp -= 20;
+
+                SoundManager.instance.PlaySE(5);
+                playerDamagePanel.DOShakePosition(0.3f, 0.5f, 20, 0, false, true);
+
+
+                if (PlayerManager.instance.hp <= 0)
+                {
+                    PlayerManager.instance.hp = 1;
+                }
+
+                PlayerUIManager.instance.UpdateUI(PlayerManager.instance);
+                ToMapOKButton.SetActive(true);
+
+            }
+
+            else if (r < 90)
+            {
+                DialogTextManager.instance.SetScenarios(new string[] { "瞬間、鋭い刃が中から飛び出し、\n顔をかすめる。\n少しずれていれば致命傷だった。" });
                 PlayerManager.instance.hp -= 10;
 
                 SoundManager.instance.PlaySE(1);

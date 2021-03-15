@@ -486,7 +486,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 811662245}
+      - m_Target: {fileID: 0}
         m_MethodName: OnBossBattleButton
         m_Mode: 1
         m_Arguments:
@@ -532,83 +532,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77421096}
-  m_CullTransparentMesh: 0
---- !u!1 &97541777
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 97541778}
-  - component: {fileID: 97541780}
-  - component: {fileID: 97541779}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &97541778
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97541777}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 330675941}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &97541779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97541777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "\u30AA\u30C3\u30B1\u30FC"
---- !u!222 &97541780
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97541777}
   m_CullTransparentMesh: 0
 --- !u!1 &111010808
 GameObject:
@@ -692,7 +615,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 811662245}
+      - m_Target: {fileID: 0}
         m_MethodName: OnGameClearButton
         m_Mode: 1
         m_Arguments:
@@ -1199,7 +1122,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1938449449}
+      - m_Target: {fileID: 0}
         m_MethodName: ToBossBattle
         m_Mode: 1
         m_Arguments:
@@ -1673,135 +1596,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303102180}
   m_CullTransparentMesh: 0
---- !u!1 &330675940
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 330675941}
-  - component: {fileID: 330675944}
-  - component: {fileID: 330675943}
-  - component: {fileID: 330675942}
-  m_Layer: 5
-  m_Name: "\u30AF\u30A8\u30B9\u30C8\uFF12\u7528\u30DE\u30C3\u30D7\u306B\u623B\u308B\u30AA\u30C3\u30B1\u30FC\u30DC\u30BF\u30F3"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &330675941
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330675940}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 97541778}
-  m_Father: {fileID: 1319140969}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 30}
-  m_SizeDelta: {x: 233.8, y: 61.3}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &330675942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330675940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 330675943}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1938449449}
-        m_MethodName: OnToMapOKButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &330675943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330675940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f7f681cd213d9a7488500ce745f2d4f8, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &330675944
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330675940}
-  m_CullTransparentMesh: 0
 --- !u!1 &439965479
 GameObject:
   m_ObjectHideFlags: 0
@@ -2207,7 +2001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50a4577f4092c04eac7e87f0fba09b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quest2: {fileID: 1938449449}
+  quest2: {fileID: 0}
   EnemyPrehab: {fileID: 3885279415868402851, guid: 97e8327c115acde48ba437c9d51c88d5,
     type: 3}
   stageUI: {fileID: 2118597241}
@@ -2321,7 +2115,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1938449449}
+      - m_Target: {fileID: 0}
         m_MethodName: OnTansakuButton
         m_Mode: 1
         m_Arguments:
@@ -2805,24 +2599,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 811662244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bf6a68ffd4828c4aaa50bfc8a596c1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b016a539bd30f947b2052439fcb666e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeigenButton: {fileID: 0}
-  HayashiButton: {fileID: 0}
-  KemonomichiButton: {fileID: 0}
-  MoriButton: {fileID: 0}
-  KuraiMoriButton: {fileID: 0}
-  NumaButton: {fileID: 0}
-  MachimodoButton: {fileID: 1422928539}
-  ReturnHeigenButton: {fileID: 0}
-  ReturnHayashiButton: {fileID: 0}
-  ReturnMoriButton: {fileID: 0}
-  ReturnKuraiMoriButton: {fileID: 0}
-  BossBattleiButton: {fileID: 77421096}
-  GameClearButton: {fileID: 111010808}
-  FakeButton: {fileID: 0}
-  quest: {fileID: 524594826}
+  IriguchiButton: {fileID: 0}
+  TanimaButton: {fileID: 0}
+  ShurakuButton: {fileID: 0}
+  KojoButton: {fileID: 0}
+  YosuiroButton: {fileID: 0}
+  HirobaButton: {fileID: 0}
+  RoyaButton: {fileID: 0}
+  HEYA101Button: {fileID: 0}
+  HEYA102Button: {fileID: 0}
+  HEYA103Button: {fileID: 0}
+  KakushiButton: {fileID: 0}
+  KantokukanButton: {fileID: 0}
+  ReturnToIriguchiButton: {fileID: 0}
+  ReturnToTanimaButton: {fileID: 0}
+  ReturnToShurakuButton: {fileID: 0}
+  ReturnToKojoButton: {fileID: 0}
+  ReturnToYosuiroButton: {fileID: 0}
+  ReturnToHirobaButton: {fileID: 0}
+  ReturnToRoyaButton: {fileID: 0}
+  ReturnToHEYA101Button: {fileID: 0}
+  ReturnToHEYA102Button: {fileID: 0}
+  ReturnToHEYA103Button: {fileID: 0}
+  ReturnToKakushiButton: {fileID: 0}
+  ReturnToKantokukanButton: {fileID: 0}
+  MachimodoButton: {fileID: 0}
+  BossBattleButton: {fileID: 0}
+  quest: {fileID: 0}
 --- !u!4 &811662246
 Transform:
   m_ObjectHideFlags: 0
@@ -3425,7 +3231,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1938449449}
+      - m_Target: {fileID: 0}
         m_MethodName: OnTansakuButton
         m_Mode: 1
         m_Arguments:
@@ -4056,7 +3862,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1938449449}
+      - m_Target: {fileID: 0}
         m_MethodName: OnToMapOKButton
         m_Mode: 1
         m_Arguments:
@@ -4222,7 +4028,6 @@ RectTransform:
   - {fileID: 77421097}
   - {fileID: 111010809}
   - {fileID: 2068498810}
-  - {fileID: 330675941}
   - {fileID: 2052280714}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -5261,7 +5066,7 @@ MonoBehaviour:
   NoButton: {fileID: 1298942520}
   ToMapOKButton: {fileID: 2068498806}
   playerDamagePanel: {fileID: 519420032}
-  quest2: {fileID: 1938449449}
+  quest2: {fileID: 0}
 --- !u!1 &1793779917
 GameObject:
   m_ObjectHideFlags: 0
@@ -5586,12 +5391,12 @@ GameObject:
   - component: {fileID: 1938449450}
   - component: {fileID: 1938449449}
   m_Layer: 0
-  m_Name: "\u30AF\u30A8\u30B9\u30C8\uFF12\u7BA1\u7406\u30DE\u30F3"
+  m_Name: "\u30AF\u30A8\u30B9\u30C83\u7BA1\u7406\u30DE\u30F3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1938449449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5601,25 +5406,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1938449448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51147f25998a4b74c9fa26dbd420d578, type: 3}
+  m_Script: {fileID: 11500000, guid: 58108110a407e4a4da680feef89a1b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questBG: {fileID: 1340729627}
-  takarabako: {fileID: 1786663391}
-  EnemyPrehab: {fileID: 6283579139108812928, guid: 28ba339308409874eb0861a613ce16f8,
+  questBG: {fileID: 0}
+  takarabako: {fileID: 0}
+  EnemyPrehab: {fileID: 6139539174100321768, guid: b4d2a33d1919da84c8f766e3f9dd1a8d,
     type: 3}
-  BossEnemyPrehab: {fileID: 5939813238137766051, guid: 050e237110465934fa802b62a6711fcd,
-    type: 3}
-  battleManager: {fileID: 575947743}
-  enemyUI: {fileID: 680842541}
-  waza: {fileID: 198707343}
-  TansakuButton: {fileID: 1040466586}
-  ToMapOKButton: {fileID: 2068498806}
-  machimodoButton: {fileID: 1422928539}
-  bossBattleButton: {fileID: 158568974}
-  returnBossBattleButton: {fileID: 565562922}
-  TakarabakoHiButton: {fileID: 871524821}
-  TakarabakoNoButton: {fileID: 1298942520}
+  stageUI: {fileID: 0}
+  BossEnemyPrehab: {fileID: 0}
+  encount: {fileID: 0}
+  battleManager: {fileID: 0}
+  enemyUI: {fileID: 0}
+  waza: {fileID: 0}
+  TansakuButton: {fileID: 0}
+  ToMapOKButton: {fileID: 0}
+  machimodoButton: {fileID: 0}
+  bossBattleButton: {fileID: 0}
+  returnBossBattleButton: {fileID: 0}
+  TakarabakoHiButton: {fileID: 0}
+  TakarabakoNoButton: {fileID: 0}
   random: 0
 --- !u!224 &1938449450
 RectTransform:
@@ -6158,7 +5964,7 @@ RectTransform:
   m_Children:
   - {fileID: 996190603}
   m_Father: {fileID: 1319140969}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6427,7 +6233,7 @@ MonoBehaviour:
   ReturnHayashiButton: {fileID: 0}
   ReturnMoriButton: {fileID: 0}
   ReturnKuraiMoriButton: {fileID: 0}
-  map: {fileID: 811662245}
+  map: {fileID: 0}
 --- !u!4 &2118597242
 Transform:
   m_ObjectHideFlags: 0
@@ -7032,7 +6838,7 @@ PrefabInstance:
     - target: {fileID: 3995831927193277776, guid: db0f16c90bd3b10418d973b6dd18ac4b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7825117854991899779, guid: db0f16c90bd3b10418d973b6dd18ac4b,
         type: 3}
@@ -7138,6 +6944,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9166329787014716195, guid: db0f16c90bd3b10418d973b6dd18ac4b,
+        type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db0f16c90bd3b10418d973b6dd18ac4b, type: 3}

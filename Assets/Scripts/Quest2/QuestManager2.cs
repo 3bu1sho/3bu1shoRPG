@@ -31,6 +31,8 @@ public class QuestManager2 : MonoBehaviour
 
     public int random;
 
+    int bossCount;
+
 
     private void Start()
     {
@@ -177,24 +179,34 @@ public class QuestManager2 : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        SoundManager.instance.PlayBGM("BossBattle2");
+        if(bossCount>0)
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "そういえばボス倒してた。" });
+            returnBossBattleButton.SetActive(true);
 
-        DialogTextManager.instance.SetScenarios(new string[] { "ラストバトル!" });
-        //stageUI.HideButtons();
-        HideAllQuest2Button();
+        }
+        else
+        {
+            SoundManager.instance.PlayBGM("BossBattle2");
 
-        GameObject enemyObj = Instantiate(BossEnemyPrehab);
-        EnemyManager enemy = enemyObj.GetComponent<EnemyManager>();
-        battleManager.Setup(enemy);
-        waza.SetUp(enemy);
+            DialogTextManager.instance.SetScenarios(new string[] { "ラストバトル!" });
+            //stageUI.HideButtons();
+            HideAllQuest2Button();
 
+            GameObject enemyObj = Instantiate(BossEnemyPrehab);
+            EnemyManager enemy = enemyObj.GetComponent<EnemyManager>();
+            battleManager.Setup(enemy);
+            waza.SetUp(enemy);
+
+            bossCount++;
+        }
     }
 
     public void LevelUpForBattle2()
     {
-        if(PlayerManager.instance.bossCount2>0)
+        if(bossCount==1)
         {
-            SaveInt.instance.princess += 3;
+            bossCount++;
             QuestClear();
         }
 
@@ -217,8 +229,9 @@ public class QuestManager2 : MonoBehaviour
 
     void QuestClear()
     {
-        PlayerManager.instance.maxHp += 10;
-        PlayerManager.instance.at += 10;
+        SaveInt.instance.princess += 3;
+        PlayerManager.instance.maxHp += 15;
+        PlayerManager.instance.at += 15;
         PlayerManager.instance.magaChike -= 1;
         DialogTextManager.instance.SetScenarios(new string[] { "クリア！！おめでとう！\n＊プリンセスを3手に入れた！" });
         SoundManager.instance.StopBGM();
