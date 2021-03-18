@@ -40,73 +40,73 @@ public class MapManager3 : MonoBehaviour
     public void OnToIRIGUCHIButton()
     {
         type = FieldType.IRIGUCHI;
-        //AnyButton();
+        AnyButton();
     }
 
     public void OnToTANIMAButton()
     {
         type = FieldType.TANIMA;
-        //AnyButton();
+        AnyButton();
     }
 
     public void OnToSHURAKUButton()
     {
         type = FieldType.SHURAKU;
-        //AnyButton();
+        AnyButton();
     }
 
     public void OnToKOJOButton()
     {
         type = FieldType.KOJO;
-        //AnyButton();
+        AnyButton();
     }
 
     public void OnToHIROBAButton()
     {
         type = FieldType.HIROBA;
-        //AnyButton();
+        AnyButton();
     }
 
     public void OnToYOSUIROButton()
     {
         type = FieldType.YOSUIRO;
-        //AnyButton();
+        AnyButton();
     }
 
     public void OnToROYAButton()
     {
         type = FieldType.ROYA;
-        //AnyButton();
+        AnyButton();
     }
 
     public void OnToHEYA101Button()
     {
         type = FieldType.HEYA101;
-        //AnyButton();
+        AnyButton();
     }
 
     public void OnToHEYA102Button()
     {
         type = FieldType.HEYA102;
-        //AnyButton();
+        AnyButton();
     }
 
     public void OnToHEYA103Button()
     {
         type = FieldType.HEYA103;
-        //AnyButton();
+        AnyButton();
     }
 
     public void OnToKAKUSHIButton()
     {
         type = FieldType.KAKUSHI;
-        //AnyButton();
+        AnyButton();
     }
 
     public void OnToKANTOKUKANButton()
     {
         type = FieldType.KANTOKUKAN;
-        //AnyButton();
+        AnyButton();
     }
 
 
@@ -131,9 +131,7 @@ public class MapManager3 : MonoBehaviour
     public GameObject ReturnToYosuiroButton;
     public GameObject ReturnToHirobaButton;
     public GameObject ReturnToRoyaButton;
-    public GameObject ReturnToHEYA101Button;
     public GameObject ReturnToHEYA102Button;
-    public GameObject ReturnToHEYA103Button;
     public GameObject ReturnToKakushiButton;
     public GameObject ReturnToKantokukanButton;
 
@@ -179,7 +177,7 @@ public class MapManager3 : MonoBehaviour
             ReturnToShurakuButton.SetActive(true);
             HirobaButton.SetActive(true);
 
-            DialogTextManager.instance.SetScenarios(new string[] { "ならず者の集落だ。\n人々の好意的な態度がむしろ\n自分を疑心暗鬼にさせる。" });
+            DialogTextManager.instance.SetScenarios(new string[] { "廃工場の跡地だ。\nかつてのこの街はどれほど\n栄えていたのだろうか。" });
         }
 
         if (type == FieldType.HIROBA)
@@ -187,7 +185,7 @@ public class MapManager3 : MonoBehaviour
             ReturnToShurakuButton.SetActive(true);
             HirobaButton.SetActive(true);
 
-            DialogTextManager.instance.SetScenarios(new string[] { "ならず者の集落だ。\n人々の好意的な態度がむしろ\n自分を疑心暗鬼にさせる。" });
+            DialogTextManager.instance.SetScenarios(new string[] { "噴水のある広場に出た。\nその噴水は苔むしていて、\nもう何年も動いていないようだ。" });
         }
 
 
@@ -196,7 +194,7 @@ public class MapManager3 : MonoBehaviour
             ReturnToShurakuButton.SetActive(true);
             RoyaButton.SetActive(true);
 
-            DialogTextManager.instance.SetScenarios(new string[] { "ならず者の集落だ。\n人々の好意的な態度がむしろ\n自分を疑心暗鬼にさせる。" });
+            DialogTextManager.instance.SetScenarios(new string[] { "自分は用水路を移動する。\nねずみがチュウチュウと\n鳴いている。" });
         }
 
         if (type == FieldType.ROYA)
@@ -206,35 +204,36 @@ public class MapManager3 : MonoBehaviour
             HEYA102Button.SetActive(true);
             HEYA103Button.SetActive(true);
 
-            DialogTextManager.instance.SetScenarios(new string[] { "ならず者の集落だ。\n人々の好意的な態度がむしろ\n自分を疑心暗鬼にさせる。" });
+            DialogTextManager.instance.SetScenarios(new string[] { "用水路を抜けると、そこは牢獄だった。\n牢獄に通ずる廊下は瓦礫で\n塞がっており、3つの開いた\n牢に入れるだけだ" });
         }
 
         if (type == FieldType.HEYA101)
         {
             ReturnToRoyaButton.SetActive(true);
 
-            DialogTextManager.instance.SetScenarios(new string[] { "ならず者の集落だ。\n人々の好意的な態度がむしろ\n自分を疑心暗鬼にさせる。" });
-        }
-
-        if (type == FieldType.HEYA103)
-        {
-            ReturnToRoyaButton.SetActive(true);
-
-            DialogTextManager.instance.SetScenarios(new string[] { "ならず者の集落だ。\n人々の好意的な態度がむしろ\n自分を疑心暗鬼にさせる。" });
+            DialogTextManager.instance.SetScenarios(new string[] { "何もない。" });
         }
 
         if (type == FieldType.HEYA102)
         {
             ReturnToRoyaButton.SetActive(true);
 
-            DialogTextManager.instance.SetScenarios(new string[] { "ならず者の集落だ。\n人々の好意的な態度がむしろ\n自分を疑心暗鬼にさせる。" });
+            DialogTextManager.instance.SetScenarios(new string[] { "一見ただの牢屋のようだ。" });
+            KakushiButton.SetActive(true);
+        }
+
+        if (type == FieldType.HEYA103)
+        {
+            ReturnToRoyaButton.SetActive(true);
+
+            DialogTextManager.instance.SetScenarios(new string[] { "白骨だ。" });
         }
 
         if (type == FieldType.KAKUSHI)
         {
             ReturnToHEYA102Button.SetActive(true);
-
-            DialogTextManager.instance.SetScenarios(new string[] { "ならず者の集落だ。\n人々の好意的な態度がむしろ\n自分を疑心暗鬼にさせる。" });
+            KantokukanButton.SetActive(true);
+            DialogTextManager.instance.SetScenarios(new string[] { "自分は隠し通路を進む。" });
         }
 
         if (type == FieldType.KANTOKUKAN)
@@ -242,7 +241,7 @@ public class MapManager3 : MonoBehaviour
             ReturnToKakushiButton.SetActive(true);
             BossBattleButton.SetActive(true);
 
-            DialogTextManager.instance.SetScenarios(new string[] { "ならず者の集落だ。\n人々の好意的な態度がむしろ\n自分を疑心暗鬼にさせる。" });
+            DialogTextManager.instance.SetScenarios(new string[] { "監督官の部屋と書かれている。\n\n※ボス戦になります。\n覚悟は決まりましたか？" });
         }
     }
 
@@ -251,6 +250,8 @@ public class MapManager3 : MonoBehaviour
     {
         quest.OnTansakuButton();
     }
+
+    /*
 
     public void OnGameClearButton()
     {
@@ -262,4 +263,6 @@ public class MapManager3 : MonoBehaviour
         quest.QuestClear();
         MachimodoButton.SetActive(true);
     }
+
+    */
 }

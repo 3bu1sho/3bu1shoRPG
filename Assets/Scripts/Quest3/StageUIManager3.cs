@@ -8,10 +8,10 @@ public class StageUIManager3 : MonoBehaviour
     public Text stageText;
     public GameObject TansakuButton;
     public GameObject MachimodoButton;
-    public GameObject stageClearText;
+//    public GameObject stageClearText;
     public GameObject owariButton;
     public GameObject BossBattleButton;
-    public GameObject QuestClearButton;
+//   public GameObject QuestClearButton;
 
     public GameObject IriguchiButton;
     public GameObject TanimaButton;
@@ -33,9 +33,7 @@ public class StageUIManager3 : MonoBehaviour
     public GameObject ReturnToYosuiroButton;
     public GameObject ReturnToHirobaButton;
     public GameObject ReturnToRoyaButton;
-    public GameObject ReturnToHEYA101Button;
     public GameObject ReturnToHEYA102Button;
-    public GameObject ReturnToHEYA103Button;
     public GameObject ReturnToKakushiButton;
     public GameObject ReturnToKantokukanButton;
 
@@ -78,15 +76,13 @@ public class StageUIManager3 : MonoBehaviour
         ReturnToYosuiroButton.SetActive(false);
         ReturnToHirobaButton.SetActive(false);
         ReturnToRoyaButton.SetActive(false);
-        ReturnToHEYA101Button.SetActive(false);
         ReturnToHEYA102Button.SetActive(false);
-        ReturnToHEYA103Button.SetActive(false);
         ReturnToKakushiButton.SetActive(false);
         ReturnToKantokukanButton.SetActive(false);
 
         MachimodoButton.SetActive(false);
         BossBattleButton.SetActive(false);
-        QuestClearButton.SetActive(false);
+//        QuestClearButton.SetActive(false);
     }
 
     public void ShowButtons()
@@ -98,7 +94,7 @@ public class StageUIManager3 : MonoBehaviour
 
     public void ShowClearText()
     {
-        stageClearText.SetActive(true);
+//        stageClearText.SetActive(true);
         IriguchiButton.SetActive(false);
         TanimaButton.SetActive(false);
         ShurakuButton.SetActive(false);
@@ -118,15 +114,13 @@ public class StageUIManager3 : MonoBehaviour
         ReturnToYosuiroButton.SetActive(false);
         ReturnToHirobaButton.SetActive(false);
         ReturnToRoyaButton.SetActive(false);
-        ReturnToHEYA101Button.SetActive(false);
         ReturnToHEYA102Button.SetActive(false);
-        ReturnToHEYA103Button.SetActive(false);
         ReturnToKakushiButton.SetActive(false);
         ReturnToKantokukanButton.SetActive(false);
 
 
         BossBattleButton.SetActive(false);
-        QuestClearButton.SetActive(false);
+//        QuestClearButton.SetActive(false);
     }
 
     public void HideMachimodo()

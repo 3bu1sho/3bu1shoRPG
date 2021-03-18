@@ -19,13 +19,13 @@ public class QuestManager3 : MonoBehaviour
     public EnemyUIManager enemyUI;
     public WazaManager waza;
 
-    public GameObject TansakuButton;
+ //   public GameObject TansakuButton;
 
     [SerializeField] GameObject ToMapOKButton;
     public GameObject machimodoButton;
 
     public GameObject bossBattleButton;
-    public GameObject returnBossBattleButton;
+ //   public GameObject returnBossBattleButton;
 
     public GameObject TakarabakoHiButton;
     public GameObject TakarabakoNoButton;
@@ -40,19 +40,21 @@ public class QuestManager3 : MonoBehaviour
         // SoundManager.instance.PlayBGM("Quest3");
         DialogTextManager.instance.SetScenarios(new string[] { "廃墟についた。\n辺りには誰もいないというのに、\n確かな殺気を感じる。" });
         PlayerManager.instance.playerMapCheck = 3;
+        SoundManager.instance.PlayBGM("Quest3");
 
 
     }
 
     void HideAllQuest3Button()
     {
-        TansakuButton.SetActive(false);
+     //   TansakuButton.SetActive(false);
         ToMapOKButton.SetActive(false);
         machimodoButton.SetActive(false);
         bossBattleButton.SetActive(false);
-        returnBossBattleButton.SetActive(false);
+     //   returnBossBattleButton.SetActive(false);
         TakarabakoHiButton.SetActive(false);
         TakarabakoNoButton.SetActive(false);
+        stageUI.HideButtons();
 
     }
 
@@ -77,9 +79,11 @@ public class QuestManager3 : MonoBehaviour
     {
         HideAllQuest3Button();
 
-        TansakuButton.SetActive(true);
+        //    TansakuButton.SetActive(true);
         // ShowStageText();
         // SoundManager.instance.PlaySE(0);
+        stageUI.ShowButtons();
+
 
     }
 
@@ -151,21 +155,30 @@ public class QuestManager3 : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        SoundManager.instance.PlayBGM("BossBattle3");
+        if (PlayerManager.instance.bossCount3 == 0)
+        {
+            SoundManager.instance.PlayBGM("BossBattle3");
 
-        DialogTextManager.instance.SetScenarios(new string[] { "瞬間、悪寒を覚える。\n自分はこの戦いに持てる\n全てを尽くすまで。" });
-        HideAllQuest3Button();
+            DialogTextManager.instance.SetScenarios(new string[] { "瞬間、悪寒を覚える。\n自分はこの戦いに持てる\n全てを尽くすまで。" });
+            HideAllQuest3Button();
 
-        GameObject enemyObj = Instantiate(BossEnemyPrehab);
-        EnemyManager enemy = enemyObj.GetComponent<EnemyManager>();
-        battleManager.Setup(enemy);
-        waza.SetUp(enemy);
+            GameObject enemyObj = Instantiate(BossEnemyPrehab);
+            EnemyManager enemy = enemyObj.GetComponent<EnemyManager>();
+            battleManager.Setup(enemy);
+            waza.SetUp(enemy);
+        }
+
+        else
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "そういえばボス倒してたわ。" });
+            ToMapOKButton.SetActive(true);
+        }
 
     }
 
     public void LevelUpForBattle3()
     {
-        if (PlayerManager.instance.bossCount3 > 0)
+        if (PlayerManager.instance.bossCount3 > 1)
         {
             SaveInt.instance.princess += 5;
             QuestClear();
@@ -183,7 +196,6 @@ public class QuestManager3 : MonoBehaviour
 
 
             ToMapOKButton.SetActive(true);
-
         }
 
     }

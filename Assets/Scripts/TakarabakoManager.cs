@@ -69,6 +69,13 @@ public class TakarabakoManager : MonoBehaviour
             quest2.OnToMapOKButton();
         }
 
+        else if (PlayerManager.instance.playerMapCheck == 3)
+        {
+            map = GameObject.Find("マップ管理マン");
+            map.GetComponent<MapManager3>().ShowFieldButton();
+
+        }
+
         hiButton.SetActive(false);
         NoButton.SetActive(false);
         ToMapOKButton.SetActive(false);
