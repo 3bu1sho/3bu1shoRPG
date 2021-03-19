@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 280}
+  m_AnchoredPosition: {x: 160, y: 280}
   m_SizeDelta: {x: 233.8, y: 61.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &15733026
@@ -2646,7 +2646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &589731547
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3621,6 +3621,7 @@ MonoBehaviour:
   ReturnToKakushiButton: {fileID: 1829757636}
   ReturnToKantokukanButton: {fileID: 703788967}
   MachimodoButton: {fileID: 1422928539}
+  MachimodoButton2: {fileID: 1727184706}
   BossBattleButton: {fileID: 1844748635}
   quest: {fileID: 1938449449}
 --- !u!4 &811662246
@@ -4573,7 +4574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1040466587
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7381,7 +7382,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 30}
+  m_AnchoredPosition: {x: 0, y: 280}
   m_SizeDelta: {x: 233.8, y: 61.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1727184708
@@ -7587,7 +7588,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 280}
+  m_AnchoredPosition: {x: -160, y: 280}
   m_SizeDelta: {x: 233.8, y: 61.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1735613723
@@ -8051,6 +8052,7 @@ MonoBehaviour:
   ToMapOKButton: {fileID: 2068498806}
   playerDamagePanel: {fileID: 519420032}
   quest2: {fileID: 0}
+  quest3: {fileID: 1938449449}
 --- !u!1 &1793779917
 GameObject:
   m_ObjectHideFlags: 0
@@ -9649,7 +9651,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u305F\u3093\u3055\u304F"
+  m_Text: "\u5DE5\u5834\u8DE1\u5730\u3078"
 --- !u!222 &2055656450
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9855,7 +9857,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u96A0\u3057\u901A\u8DEF\u3078"
+  m_Text: "\u96A0\u3055\u308C\u305F\u901A\u8DEF\u3078"
 --- !u!222 &2073357980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9896,6 +9898,7 @@ MonoBehaviour:
   stageText: {fileID: 0}
   TansakuButton: {fileID: 0}
   MachimodoButton: {fileID: 1422928539}
+  MachimodoButton2: {fileID: 1727184706}
   owariButton: {fileID: 138812675}
   BossBattleButton: {fileID: 1844748635}
   IriguchiButton: {fileID: 1040466586}

@@ -8,7 +8,9 @@ public class StageUIManager3 : MonoBehaviour
     public Text stageText;
     public GameObject TansakuButton;
     public GameObject MachimodoButton;
-//    public GameObject stageClearText;
+    public GameObject MachimodoButton2;
+
+    //    public GameObject stageClearText;
     public GameObject owariButton;
     public GameObject BossBattleButton;
 //   public GameObject QuestClearButton;
@@ -81,6 +83,8 @@ public class StageUIManager3 : MonoBehaviour
         ReturnToKantokukanButton.SetActive(false);
 
         MachimodoButton.SetActive(false);
+        MachimodoButton2.SetActive(false);
+
         BossBattleButton.SetActive(false);
 //        QuestClearButton.SetActive(false);
     }

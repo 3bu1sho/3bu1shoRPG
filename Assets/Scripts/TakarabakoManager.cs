@@ -20,6 +20,8 @@ public class TakarabakoManager : MonoBehaviour
     GameObject map;
 
     public QuestManager2 quest2;
+    public QuestManager3 quest3;
+
 
 
     void Update()
@@ -73,6 +75,8 @@ public class TakarabakoManager : MonoBehaviour
         {
             map = GameObject.Find("マップ管理マン");
             map.GetComponent<MapManager3>().ShowFieldButton();
+            quest3.OnToMapOKButton();
+
 
         }
 

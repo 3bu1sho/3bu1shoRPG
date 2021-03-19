@@ -136,6 +136,8 @@ public class MapManager3 : MonoBehaviour
     public GameObject ReturnToKantokukanButton;
 
     public GameObject MachimodoButton;
+    public GameObject MachimodoButton2;
+
     public GameObject BossBattleButton;
 
     public QuestManager3 quest;
@@ -182,8 +184,7 @@ public class MapManager3 : MonoBehaviour
 
         if (type == FieldType.HIROBA)
         {
-            ReturnToShurakuButton.SetActive(true);
-            HirobaButton.SetActive(true);
+            ReturnToKojoButton.SetActive(true);
 
             DialogTextManager.instance.SetScenarios(new string[] { "噴水のある広場に出た。\nその噴水は苔むしていて、\nもう何年も動いていないようだ。" });
         }
@@ -204,7 +205,7 @@ public class MapManager3 : MonoBehaviour
             HEYA102Button.SetActive(true);
             HEYA103Button.SetActive(true);
 
-            DialogTextManager.instance.SetScenarios(new string[] { "用水路を抜けると、そこは牢獄だった。\n牢獄に通ずる廊下は瓦礫で\n塞がっており、3つの開いた\n牢に入れるだけだ" });
+            DialogTextManager.instance.SetScenarios(new string[] { "用水路を抜けると、そこは牢獄だった。\n牢獄に通ずる廊下は瓦礫で\n塞がっており、3つの開いた\n牢に入れるだけだ。" });
         }
 
         if (type == FieldType.HEYA101)
@@ -242,6 +243,14 @@ public class MapManager3 : MonoBehaviour
             BossBattleButton.SetActive(true);
 
             DialogTextManager.instance.SetScenarios(new string[] { "監督官の部屋と書かれている。\n\n※ボス戦になります。\n覚悟は決まりましたか？" });
+        }
+
+        if (type == FieldType.AFTERBOSS)
+        {
+            ReturnToKakushiButton.SetActive(true);
+            MachimodoButton2.SetActive(true);
+
+            DialogTextManager.instance.SetScenarios(new string[] { "監督官の部屋だ。" });
         }
     }
 
