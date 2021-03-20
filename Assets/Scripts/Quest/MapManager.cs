@@ -108,6 +108,7 @@ public class MapManager : MonoBehaviour
 
     public void ShowFieldButton()
     {
+        
         if(type==FieldType.HAYASHI)
         {
             MoriButton.SetActive(true);

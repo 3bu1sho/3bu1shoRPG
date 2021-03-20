@@ -13,14 +13,15 @@ public class UrarojiManager : MonoBehaviour
     public GameObject UrarojiButton;
 
     public GameObject NoButton;
+    public GameObject NoButton2;
+
 
 
     public GameObject MonoasariButton;
     public GameObject MonoasariYesButton;
     public Transform playerDamagePanel;
 
-    public GameObject Suributton;
-    public GameObject SuriNoButton;
+    public GameObject SuriButton;
     public GameObject SuriChottoButton;
      public GameObject SuriChottoYesButton;
     public GameObject SuriMaamaaButton;
@@ -41,15 +42,17 @@ public class UrarojiManager : MonoBehaviour
         MonoasariYesButton.SetActive(false);
 
 
-        //Suributton.SetActive(false);
-        //SuriNoButton.SetActive(false);
+        SuriButton.SetActive(false);
+        NoButton.SetActive(false);
+        NoButton2.SetActive(false);
 
-        //SuriChottoButton.SetActive(false);
-        //SuriMaamaaButton.SetActive(false);
-        //SuriGatturiButton.SetActive(false);
-        //SuriChottoYesButton.SetActive(false);
-        //SuriMaamaaYesButton.SetActive(false);
-        //SuriGatturiYesButton.SetActive(false);
+
+        SuriChottoButton.SetActive(false);
+        SuriMaamaaButton.SetActive(false);
+        SuriGatturiButton.SetActive(false);
+        SuriChottoYesButton.SetActive(false);
+        SuriMaamaaYesButton.SetActive(false);
+        SuriGatturiYesButton.SetActive(false);
 
 
     }
@@ -90,6 +93,8 @@ public class UrarojiManager : MonoBehaviour
         //SuriMaamaaButton.SetActive(true);
         //SuriGatturiButton.SetActive(true);
         MonoasariButton.SetActive(true);
+        SuriButton.SetActive(true);
+
 
     }
 
@@ -272,17 +277,34 @@ public class UrarojiManager : MonoBehaviour
 
     }
 
+    public void OnSuriButton()
+    {
+        HideAllUrarojiButton();
+        DialogTextManager.instance.SetScenarios(new string[] { "自分は盗賊であることを思い出す。\nさて、誰から盗もうか。" });
+        SuriChottoButton.SetActive(true);
+        SuriMaamaaButton.SetActive(true);
+        SuriGatturiButton.SetActive(true);
+        NoButton2.SetActive(true);
+        SoundManager.instance.PlaySE(0);
+
+    }
+
 
     public void OnSuriChottoButton()
     {
-        SuriNoButton.SetActive(true);
+        HideAllUrarojiButton();
+        NoButton.SetActive(true);
         SuriChottoYesButton.SetActive(true);
+        DialogTextManager.instance.SetScenarios(new string[] { "あの農夫から金を盗もう。\n*まがチケを10枚消費します。" });
+        SoundManager.instance.PlaySE(0);
+
     }
 
     public void OnSuriChottoYesButton()
     {
         FadeIOManager.instance.FadeOutToIn2();
         StartCoroutine(ChottoSuri());
+        SoundManager.instance.PlaySE(0);
 
     }
 
@@ -290,32 +312,89 @@ public class UrarojiManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.8f);
 
+        PlayerManager.instance.magaChike -= 10;
+        PlayerManager.instance.gold += 75 + PlayerManager.instance.dexterity;
+
+
         PlayerUIManager.instance.UpdateUI(PlayerManager.instance);
         HideAllUrarojiButton();
         town.AfterAction();
         town.antenCheck--;
+        SaveInt.instance.choker += 1;
+        DialogTextManager.instance.SetScenarios(new string[] { "少しゴールドを盗めた。\nさて、今日は何をしようか。" });
+
 
     }
 
     public void OnSuriMaamaaButton()
     {
-        SuriNoButton.SetActive(true);
+        HideAllUrarojiButton();
+        NoButton.SetActive(true);
         SuriMaamaaYesButton.SetActive(true);
+        DialogTextManager.instance.SetScenarios(new string[] { "あの露天商から金を盗もう。\n*まがチケを18枚消費します。" });
+        SoundManager.instance.PlaySE(0);
+
     }
 
     public void OnSuriMaamaaYesButton()
     {
+        FadeIOManager.instance.FadeOutToIn2();
+        StartCoroutine(MaamaaSuri());
+        SoundManager.instance.PlaySE(0);
+
+    }
+
+    IEnumerator MaamaaSuri()
+    {
+        yield return new WaitForSeconds(0.8f);
+
+        PlayerManager.instance.magaChike -= 18;
+        PlayerManager.instance.gold += 150 + PlayerManager.instance.dexterity;
+
+
+        PlayerUIManager.instance.UpdateUI(PlayerManager.instance);
+        HideAllUrarojiButton();
+        town.AfterAction();
+        town.antenCheck--;
+        SaveInt.instance.choker += 2;
+        DialogTextManager.instance.SetScenarios(new string[] { "そこそこゴールドを盗めた。\nさて、今日は何をしようか。" });
+
 
     }
 
     public void OnSuriGatturiButton()
     {
-        SuriNoButton.SetActive(true);
+        HideAllUrarojiButton();
+        NoButton.SetActive(true);
         SuriGatturiYesButton.SetActive(true);
+        DialogTextManager.instance.SetScenarios(new string[] { "華美な服の男から金を盗もう。\n*まがチケを25枚消費します。" });
+        SoundManager.instance.PlaySE(0);
+
     }
 
     public void OnSuriGatturiYesButton()
     {
-        ShowUrarojiMenu();
+        StartCoroutine(GatturiSuri());
+        FadeIOManager.instance.FadeOutToIn2();
+        SoundManager.instance.PlaySE(0);
+
     }
+
+    IEnumerator GatturiSuri()
+    {
+        yield return new WaitForSeconds(0.8f);
+
+        DialogTextManager.instance.SetScenarios(new string[] { "結構ゴールドを盗めた。\nさて、今日は何をしようか。" });
+        PlayerManager.instance.magaChike -= 25;
+        PlayerManager.instance.gold += 225 + PlayerManager.instance.dexterity;
+
+        PlayerUIManager.instance.UpdateUI(PlayerManager.instance);
+        HideAllUrarojiButton();
+        town.AfterAction();
+        town.antenCheck--;
+        SaveInt.instance.choker += 3;
+
+    }
+
+
 }

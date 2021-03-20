@@ -53,6 +53,11 @@ public class WazaManager : MonoBehaviour
         {
             wazaButton.SetActive(true);
         }
+
+        if (PlayerManager.instance.jobSkillPoint == 4)
+        {
+            wazaButton.SetActive(false);
+        }
     }
 
     public void OnWazaButton()

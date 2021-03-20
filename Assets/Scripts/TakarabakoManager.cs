@@ -19,6 +19,7 @@ public class TakarabakoManager : MonoBehaviour
 
     GameObject map;
 
+    public QuestManager quest;
     public QuestManager2 quest2;
     public QuestManager3 quest3;
 
@@ -159,7 +160,7 @@ public class TakarabakoManager : MonoBehaviour
 
         }
 
-        if (PlayerManager.instance.playerMapCheck == 3)
+        else if (PlayerManager.instance.playerMapCheck == 3)
         {
             if (r < 36)
             {

@@ -14,6 +14,9 @@ public class QuestManager3 : MonoBehaviour
     public GameObject BossEnemyPrehab;
     public EncountManager encount;
 
+    public GameObject runButton;
+    public GameObject fightButton;
+
 
     public BattleManager battleManager;
     public EnemyUIManager enemyUI;
@@ -45,7 +48,7 @@ public class QuestManager3 : MonoBehaviour
 
     }
 
-    void HideAllQuest3Button()
+    public void HideAllQuest3Button()
     {
      //   TansakuButton.SetActive(false);
         ToMapOKButton.SetActive(false);
@@ -106,7 +109,6 @@ public class QuestManager3 : MonoBehaviour
 
         if (random < 35)
         {
-            SoundManager.instance.PlayBGM("Battle3");
             Debug.Log("敵だよ！");
             EncountEnemy();
         }
@@ -124,13 +126,69 @@ public class QuestManager3 : MonoBehaviour
 
         void EncountEnemy()
         {
-            DialogTextManager.instance.SetScenarios(new string[] { "敵だよ！" });
-            stageUI.HideButtons();
-            GameObject enemyObj = Instantiate(EnemyPrehab);
-            EnemyManager enemy = enemyObj.GetComponent<EnemyManager>();
-            battleManager.Setup(enemy);
-            waza.SetUp(enemy);
+
+            if (PlayerManager.instance.jobCheck == 4)
+            {
+                DialogTextManager.instance.SetScenarios(new string[] { "敵が見える。向こうは\nこちらに気づいていない\nようだ。\nさて、どうしようか。" });
+                StartCoroutine(ShowRogueButton());
+
+            }
+
+            else
+            {
+                EncountProcess();
+            }
         }
+    }
+
+    IEnumerator  ShowRogueButton()
+    {
+        yield return new WaitForSeconds(1f);
+        runButton.SetActive(true);
+        fightButton.SetActive(true);
+    }
+
+    public void OnFightButton()
+    {
+        runButton.SetActive(false);
+        fightButton.SetActive(false);
+        SoundManager.instance.PlaySE(0);
+        StartCoroutine(Fighting());
+    }
+
+    public void OnRunButton()
+    {
+        runButton.SetActive(false);
+        fightButton.SetActive(false);
+        SoundManager.instance.PlaySE(0);
+        OnToMapOKButton();
+
+    }
+
+
+    IEnumerator Fighting()
+    {
+        questBG.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 1f)
+.OnComplete(() => questBG.transform.localScale = new Vector3(1, 1, 1));
+
+        SpriteRenderer questBGSpriteRenderer = questBG.GetComponent<SpriteRenderer>();
+        questBGSpriteRenderer.DOFade(0, 1f)
+            .OnComplete(() => questBGSpriteRenderer.DOFade(1, 0));
+
+        yield return new WaitForSeconds(1f);
+
+        EncountProcess();
+    }
+
+    public void EncountProcess()
+    {
+        SoundManager.instance.PlayBGM("Battle3");
+        DialogTextManager.instance.SetScenarios(new string[] { "敵だよ！" });
+        stageUI.HideButtons();
+        GameObject enemyObj = Instantiate(EnemyPrehab);
+        EnemyManager enemy = enemyObj.GetComponent<EnemyManager>();
+        battleManager.Setup(enemy);
+        waza.SetUp(enemy);
     }
 
     public void ToBossBattle()
@@ -146,7 +204,6 @@ public class QuestManager3 : MonoBehaviour
         questBGSpriteRenderer.DOFade(0, 1f)
             .OnComplete(() => questBGSpriteRenderer.DOFade(1, 0));
 
-        PlayerManager.instance.bossCount3++;
         StartCoroutine(BossBattle());
     }
 
@@ -157,6 +214,7 @@ public class QuestManager3 : MonoBehaviour
 
         if (PlayerManager.instance.bossCount3 == 0)
         {
+            PlayerManager.instance.bossCount3++;
             SoundManager.instance.PlayBGM("BossBattle3");
 
             DialogTextManager.instance.SetScenarios(new string[] { "瞬間、悪寒を覚える。\n自分はこの戦いに持てる\n全てを尽くすまで。" });

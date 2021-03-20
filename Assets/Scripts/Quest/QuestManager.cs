@@ -33,6 +33,11 @@ public class QuestManager : MonoBehaviour
     [SerializeField] GameObject ToMapOKButton;
     public GameObject wazaButton;
 
+    public GameObject runButton;
+    public GameObject fightButton;
+
+
+
 
     void Start()
     {
@@ -87,7 +92,6 @@ public class QuestManager : MonoBehaviour
         /*else*/
         if (random < 35)
         {
-            SoundManager.instance.PlayBGM("Battle");
             Debug.Log("敵だよ！");
             EncountEnemy();
         }
@@ -105,13 +109,73 @@ public class QuestManager : MonoBehaviour
 
         void EncountEnemy()
         {
-            DialogTextManager.instance.SetScenarios(new string[] { "敵だよ！" });
-            stageUI.HideButtons();
-            GameObject enemyObj = Instantiate(EnemyPrehab);
-            EnemyManager enemy = enemyObj.GetComponent<EnemyManager>();
-            battleManager.Setup(enemy);
-            waza.SetUp(enemy);
+
+            if(PlayerManager.instance.jobCheck==4)
+            {
+
+                DialogTextManager.instance.SetScenarios(new string[] { "敵が見える。向こうは\nこちらに気づいていない\nようだ。\nさて、どうしようか。" });
+                StartCoroutine(ShowRogueButton());
+
+
+            }
+
+            else
+            {
+                EncountProcess();
+            }
         }
+    }
+
+    IEnumerator ShowRogueButton()
+    {
+        yield return new WaitForSeconds(1f);
+        runButton.SetActive(true);
+        fightButton.SetActive(true);
+    }
+
+    public void OnFightButton()
+    {
+        runButton.SetActive(false);
+        fightButton.SetActive(false);
+        SoundManager.instance.PlaySE(0);
+        stageUI.HideButtons();
+        StartCoroutine(Fighting());
+
+    }
+
+    public void OnRunButton()
+    {
+        runButton.SetActive(false);
+        fightButton.SetActive(false);
+        SoundManager.instance.PlaySE(0);
+        stageUI.HideButtons();
+        stageUI.ShowButtons();
+
+    }
+
+    IEnumerator Fighting()
+    {
+        questBG.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 1f)
+.OnComplete(() => questBG.transform.localScale = new Vector3(1, 1, 1));
+
+        SpriteRenderer questBGSpriteRenderer = questBG.GetComponent<SpriteRenderer>();
+        questBGSpriteRenderer.DOFade(0, 1f)
+            .OnComplete(() => questBGSpriteRenderer.DOFade(1, 0));
+
+        yield return new WaitForSeconds(1f);
+
+        EncountProcess();
+    }
+
+    public void EncountProcess()
+    {
+        SoundManager.instance.PlayBGM("Battle");
+        DialogTextManager.instance.SetScenarios(new string[] { "敵だよ！" });
+        stageUI.HideButtons();
+        GameObject enemyObj = Instantiate(EnemyPrehab);
+        EnemyManager enemy = enemyObj.GetComponent<EnemyManager>();
+        battleManager.Setup(enemy);
+        waza.SetUp(enemy);
     }
 
 

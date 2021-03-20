@@ -78,7 +78,7 @@ public class JobManager : MonoBehaviour
         }
         else if (jobSelect == 4)
         {
-            DialogTextManager.instance.SetScenarios(new string[] { "思い出した。自分は盗賊だ。\n自分の舌は肥えている。\n...知っている。\n土の味も、鉄の味も、\n人の不幸の蜜の味さえも。" });
+            DialogTextManager.instance.SetScenarios(new string[] { "思い出した。自分は盗賊だ。\n自分の舌は知っている。\n土の味も、鉄の味も、\n人の不幸の蜜の味さえも。" });
 
             PlayerManager.instance.jobCheck = 4;
 
@@ -128,9 +128,7 @@ public class JobManager : MonoBehaviour
         {
             PlayerManager.instance.maxHp = 50;
             PlayerManager.instance.hp = 50;
-            PlayerManager.instance.maxHp = 50;
             PlayerManager.instance.strength = 5;
-            PlayerManager.instance.maxHp = 50;
             PlayerManager.instance.luck = 5;
             PlayerManager.instance.accutracy = 5;
             PlayerManager.instance.agility = 5;
@@ -142,7 +140,7 @@ public class JobManager : MonoBehaviour
 
         }
 
-        if (PlayerManager.instance.jobCheck == 1)
+        else if (PlayerManager.instance.jobCheck == 1)
         {
             PlayerManager.instance.maxHp = 100;
             PlayerManager.instance.hp = 100;
@@ -160,7 +158,7 @@ public class JobManager : MonoBehaviour
             EquipmentManager.instance.EquipSoaku();
         }
 
-        if (PlayerManager.instance.jobCheck == 2)
+        else if (PlayerManager.instance.jobCheck == 2)
         {
             PlayerManager.instance.maxHp = 60;
             PlayerManager.instance.hp = 60;
@@ -178,21 +176,38 @@ public class JobManager : MonoBehaviour
             EquipmentManager.instance.EquipSoakuWeapon();
         }
 
-        if (PlayerManager.instance.jobCheck == 2)
+        else if (PlayerManager.instance.jobCheck == 3)
         {
             PlayerManager.instance.maxHp = 50;
             PlayerManager.instance.hp = 50;
             PlayerManager.instance.maxHp = 50;
-            PlayerManager.instance.strength = 4;
+            PlayerManager.instance.strength = 5;
             PlayerManager.instance.maxHp = 50;
             PlayerManager.instance.luck = 18;
             PlayerManager.instance.accutracy = 5;
-            PlayerManager.instance.agility = 6;
-            PlayerManager.instance.dexterity = 9;
-            PlayerManager.instance.gold = 500;
+            PlayerManager.instance.agility = 5;
+            PlayerManager.instance.dexterity = 5;
+            PlayerManager.instance.gold = 100;
             PlayerManager.instance.magaChike = 150;
             PlayerManager.instance.jobSkillPoint = 0;
             PlayerManager.instance.maxJobSkillPoint = 0;
+
+        }
+
+        else if (PlayerManager.instance.jobCheck == 4)
+        {
+            PlayerManager.instance.maxHp = 50;
+            PlayerManager.instance.hp = 50;
+            PlayerManager.instance.maxHp = 50;
+            PlayerManager.instance.strength = 7;
+            PlayerManager.instance.luck = 16;
+            PlayerManager.instance.accutracy = 12;
+            PlayerManager.instance.agility = 9;
+            PlayerManager.instance.dexterity = 19;
+            PlayerManager.instance.gold = 50;
+            PlayerManager.instance.magaChike = 150;
+            PlayerManager.instance.jobSkillPoint = 2;
+            PlayerManager.instance.maxJobSkillPoint = 2;
 
         }
 
