@@ -6,6 +6,11 @@ using DG.Tweening;
 public class TestScript : MonoBehaviour
 {
 
+    void Start()
+    {
+        a=1;
+    }
+
     [SerializeField] Transform playerDamagePanel;
 
     public void GetErikusa()
@@ -51,5 +56,26 @@ public class TestScript : MonoBehaviour
     {
         DialogTextManager.instance.SetScenarios(new string[] { "これは...プリンセスだろうか。\n薄汚れてよくわからない。\nただ、何か悲しさを感じさせる。\n一体ここでなにがあったのだろう...\n自分は薄汚れたプリンセスを拾った。" });
 
+    }
+    float a;
+    float b;
+    float c;
+    float d;
+    int count;
+
+    public void TextNum()
+    {
+        if(a ==8)
+        {
+
+        }
+        else
+        {
+            c++;
+            b = 1 / c;
+            a += b;
+            Debug.Log(c);
+            TextNum();
+        }
     }
 }
