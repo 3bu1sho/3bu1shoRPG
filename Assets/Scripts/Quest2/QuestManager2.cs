@@ -258,9 +258,8 @@ public class QuestManager2 : MonoBehaviour
 
     public void LevelUpForBattle2()
     {
-        if(bossCount==1)
+        if(PlayerManager.instance.bossCount2>0)
         {
-            bossCount++;
             QuestClear();
         }
 

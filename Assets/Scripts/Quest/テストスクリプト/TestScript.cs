@@ -8,7 +8,9 @@ public class TestScript : MonoBehaviour
 
     void Start()
     {
-        a=1;
+        a = 1;
+        b = 0;
+        c = 0;
     }
 
     [SerializeField] Transform playerDamagePanel;
@@ -65,7 +67,11 @@ public class TestScript : MonoBehaviour
 
     public void TextNum()
     {
-        if(a ==8)
+        if (a > 10)
+        {
+
+        }
+        else if (c == 300000)
         {
 
         }
@@ -76,6 +82,25 @@ public class TestScript : MonoBehaviour
             a += b;
             Debug.Log(c);
             TextNum();
+        }
+    }
+
+    public void TestNum2()
+    {
+        d = a + b + c;
+        a = b;
+        b = c;
+        c = d;
+        count++;
+        Debug.Log(d);
+
+        if (count == 30)
+        {
+            Debug.Log(d);
+        }
+        else
+        {
+            TestNum2();
         }
     }
 }

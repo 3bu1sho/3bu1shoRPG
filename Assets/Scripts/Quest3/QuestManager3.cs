@@ -40,10 +40,9 @@ public class QuestManager3 : MonoBehaviour
 
     private void Start()
     {
-        // SoundManager.instance.PlayBGM("Quest3");
         DialogTextManager.instance.SetScenarios(new string[] { "廃墟についた。\n辺りには誰もいないというのに、\n確かな殺気を感じる。" });
         PlayerManager.instance.playerMapCheck = 3;
-        SoundManager.instance.PlayBGM("Quest3");
+        //oundManager.instance.PlayBGM("Quest3");
 
 
     }
@@ -236,9 +235,8 @@ public class QuestManager3 : MonoBehaviour
 
     public void LevelUpForBattle3()
     {
-        if (PlayerManager.instance.bossCount3 > 1)
+        if (PlayerManager.instance.bossCount3 > 0)
         {
-            SaveInt.instance.princess += 5;
             QuestClear();
         }
 
@@ -260,6 +258,7 @@ public class QuestManager3 : MonoBehaviour
 
     public void QuestClear()
     {
+        SaveInt.instance.princess += 5;
         PlayerManager.instance.maxHp += 15;
         PlayerManager.instance.at += 15;
         PlayerManager.instance.magaChike -= 1;

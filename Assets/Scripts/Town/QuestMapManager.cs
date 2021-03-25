@@ -93,6 +93,7 @@ public class QuestMapManager : MonoBehaviour
         }
         else
         {
+            HideAllQuestButton();
             haikyoYesButton.SetActive(true);
             noButton.SetActive(true);
             DialogTextManager.instance.SetScenarios(new string[] { "門番\n「ここでは方向感覚が機能しない。\n万端で挑めよ」\n難易度:★★☆☆☆" });
