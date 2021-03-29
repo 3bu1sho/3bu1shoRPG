@@ -13,10 +13,15 @@ public class QuestManager : MonoBehaviour
     //int currentStage = 0;
 
     public QuestManager2 quest2;
+    public QuestManager3 quest3;
 
 
     public GameObject EnemyPrehab;
     public StageUIManager stageUI;
+    public StageUIManager3 stageUI3;
+    public StageUIManager4 stageUI4;
+
+
     public BattleManager battleManager;
     public WazaManager waza;
     public EnemyUIManager enemyUI;
@@ -191,7 +196,16 @@ public class QuestManager : MonoBehaviour
 
     public void CallHideButton()
     {
-        stageUI.HideButtons();
+        wazaButton.SetActive(false);
+        if (PlayerManager.instance.playerMapCheck==1)
+        {
+            stageUI.HideButtons();
+        }
+
+        if (PlayerManager.instance.playerMapCheck == 3)
+        {
+            stageUI3.HideButtons();
+        }
     }
 
     public void OnMachimodoButton()
@@ -220,6 +234,11 @@ public class QuestManager : MonoBehaviour
             quest2.LevelUpForBattle2();
         }
 
+        if (PlayerManager.instance.playerMapCheck == 3)
+        {
+            quest3.LevelUpForBattle3();
+        }
+
         else
         {
             LevelUpForBattle();
@@ -231,7 +250,7 @@ public class QuestManager : MonoBehaviour
     public void LevelUpForBattle()
     {
         PlayerManager.instance.maxHp += 5;
-        PlayerManager.instance.at += 5;
+        PlayerManager.instance.strength += 1;
 
         DialogTextManager.instance.SetScenarios(new string[] { "レベルアップ！\n気持ち強くなった！\n　　　　　　...気がする。" });
         SoundManager.instance.PlaySE(0);

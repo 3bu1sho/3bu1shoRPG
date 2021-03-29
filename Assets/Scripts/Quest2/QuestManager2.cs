@@ -42,6 +42,10 @@ public class QuestManager2 : MonoBehaviour
        // SoundManager.instance.PlayBGM("Quest2");
         DialogTextManager.instance.SetScenarios(new string[] { "雪原についた。\n荒れ狂う吹雪が容赦なく\n自分に襲い掛かる。\n...視界がよくない。" });
 
+        if(PlayerManager.instance.playerMapCheck>0)
+        {
+            bossCount++;
+        }
 
     }
 
@@ -266,7 +270,7 @@ public class QuestManager2 : MonoBehaviour
         else
         {
             PlayerManager.instance.maxHp += 10;
-            PlayerManager.instance.at += 10;
+            PlayerManager.instance.strength += 2;
 
             DialogTextManager.instance.SetScenarios(new string[] { "レベルアップ！\n気持ち強くなった！\n　　　　　　...気がする。" });
            // SoundManager.instance.PlaySE(0);

@@ -36,6 +36,7 @@ public class QuestManager3 : MonoBehaviour
 
 
     public int random;
+    int bossCheck;
 
 
     private void Start()
@@ -43,7 +44,6 @@ public class QuestManager3 : MonoBehaviour
         DialogTextManager.instance.SetScenarios(new string[] { "廃墟についた。\n辺りには誰もいないというのに、\n確かな殺気を感じる。" });
         PlayerManager.instance.playerMapCheck = 3;
         //oundManager.instance.PlayBGM("Quest3");
-
 
     }
 
@@ -214,6 +214,7 @@ public class QuestManager3 : MonoBehaviour
         if (PlayerManager.instance.bossCount3 == 0)
         {
             PlayerManager.instance.bossCount3++;
+            bossCheck++;
             SoundManager.instance.PlayBGM("BossBattle3");
 
             DialogTextManager.instance.SetScenarios(new string[] { "瞬間、悪寒を覚える。\n自分はこの戦いに持てる\n全てを尽くすまで。" });
@@ -235,7 +236,8 @@ public class QuestManager3 : MonoBehaviour
 
     public void LevelUpForBattle3()
     {
-        if (PlayerManager.instance.bossCount3 > 0)
+        HideAllQuest3Button();
+        if (bossCheck > 0)
         {
             QuestClear();
         }
@@ -243,9 +245,9 @@ public class QuestManager3 : MonoBehaviour
         else
         {
             PlayerManager.instance.maxHp += 15;
-            PlayerManager.instance.at += 15;
+            PlayerManager.instance.strength += 3;
 
-            DialogTextManager.instance.SetScenarios(new string[] { "レベルアップ！\n気持ち強くなった！\n　　　　　　...気がする。" });
+            DialogTextManager.instance.SetScenarios(new string[] { "レベルアップ！\n気持ち強くなった！\nHP+15\nSTR+3" });
             // SoundManager.instance.PlaySE(0);
 
             PlayerUIManager.instance.UpdateUI(PlayerManager.instance);

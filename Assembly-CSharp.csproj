@@ -114,6 +114,9 @@
     <Compile Include="Assets\Scripts\Quest3\MapManager3.cs" />
     <Compile Include="Assets\Scripts\Quest3\QuestManager3.cs" />
     <Compile Include="Assets\Scripts\Quest3\StageUIManager3.cs" />
+    <Compile Include="Assets\Scripts\Quest4\MapManager4.cs" />
+    <Compile Include="Assets\Scripts\Quest4\QuestManager4.cs" />
+    <Compile Include="Assets\Scripts\Quest4\StageUIManager4.cs" />
     <Compile Include="Assets\Scripts\SaveInt.cs" />
     <Compile Include="Assets\Scripts\SceneTransitionManager.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />

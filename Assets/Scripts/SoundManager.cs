@@ -85,6 +85,16 @@ private void Awake()
             case "BossBattle3":
                 audioSourceBGM.clip = audioClipsBGM[11];
                 break;
+            case "Quest4":
+                audioSourceBGM.clip = audioClipsBGM[12];
+                break;
+            case "Battle4":
+                audioSourceBGM.clip = audioClipsBGM[13];
+                break;
+            case "BossBattle4":
+                audioSourceBGM.clip = audioClipsBGM[14];
+                break;
+
 
         }
         audioSourceBGM.Play();

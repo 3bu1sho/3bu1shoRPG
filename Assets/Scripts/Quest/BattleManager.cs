@@ -10,6 +10,7 @@ public class BattleManager : MonoBehaviour
     public EnemyUIManager enemyUI;
     PlayerUIManager playerUI;
     public QuestManager questmanager;
+    public QuestManager3 quest3;
     public Transform playerDamagePanel;
     public CanvasGroup ojamaPanel;
     public SceneTransitionManager scene;
@@ -264,36 +265,62 @@ public class BattleManager : MonoBehaviour
     }
 
     void EndBattle()
-    {        
-
-        if(PlayerManager.instance.playerMapCheck==1)
+    {
+        questmanager.CallHideButton();
+        if (PlayerManager.instance.playerMapCheck==1)
         {
             SoundManager.instance.PlayBGM("Quest");
+            Debug.Log("EndBattle");
+            questmanager.EndBattle();
+            Destroy(enemy.gameObject);
+            enemyUI.gameObject.SetActive(false);
+            ojamaPanel.blocksRaycasts = false;
 
         }
 
         else if (PlayerManager.instance.playerMapCheck == 2)
         {
             SoundManager.instance.PlayBGM("Quest2");
+            Debug.Log("EndBattle");
+            questmanager.EndBattle();
+            Destroy(enemy.gameObject);
+            enemyUI.gameObject.SetActive(false);
+            ojamaPanel.blocksRaycasts = false;
 
         }
 
         else if (PlayerManager.instance.playerMapCheck == 3)
         {
             SoundManager.instance.PlayBGM("Quest3");
+            Debug.Log("EndBattle");
+            questmanager.EndBattle();
+            Destroy(enemy.gameObject);
+            enemyUI.gameObject.SetActive(false);
+            ojamaPanel.blocksRaycasts = false;
+
+        }
+
+        else if (PlayerManager.instance.playerMapCheck == 4)
+        {
+            SoundManager.instance.PlayBGM("Quest4");
+            Debug.Log("EndBattle");
+            questmanager.EndBattle();
+            Destroy(enemy.gameObject);
+            enemyUI.gameObject.SetActive(false);
+            ojamaPanel.blocksRaycasts = false;
 
         }
 
         else
         {
             SoundManager.instance.PlayBGM("Quest");
+            Debug.Log("EndBattle");
+            questmanager.EndBattle();
+            Destroy(enemy.gameObject);
+            enemyUI.gameObject.SetActive(false);
+            ojamaPanel.blocksRaycasts = false;
 
         }
-        Debug.Log("EndBattle");
-        questmanager.EndBattle();
-        Destroy(enemy.gameObject);
-        enemyUI.gameObject.SetActive(false);
-        ojamaPanel.blocksRaycasts = false;
 
     }
 
