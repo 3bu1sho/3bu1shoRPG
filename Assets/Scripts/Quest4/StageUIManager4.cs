@@ -18,7 +18,8 @@ public class StageUIManager4 : MonoBehaviour
 
 
     int stageCurrent;
-    public Text tier;
+    public Text tierText;
+    public int tier;
     private void Start()
     {
         owariButton.SetActive(false);
@@ -46,13 +47,12 @@ public class StageUIManager4 : MonoBehaviour
         if (stageCurrent == 20)
         {
             BossBattleButton.SetActive(true);
-            tier.text = string.Format("帰還");
+            tierText.text = string.Format("帰還");
         }
         else
         {
             TansakuButton.SetActive(true);
-            stageCurrent++;
-            tier.text = string.Format("階層:{0}", tier);
+            tierText.text = string.Format("階層:{0}", this.tier);
         }
     }
 

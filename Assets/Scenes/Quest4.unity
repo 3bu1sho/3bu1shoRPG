@@ -850,7 +850,8 @@ MonoBehaviour:
   MachimodoButton2: {fileID: 12569811}
   owariButton: {fileID: 2079407673}
   BossBattleButton: {fileID: 1243718653}
-  tier: {fileID: 1546350532}
+  tierText: {fileID: 1546350532}
+  tier: 1
 --- !u!4 &188401632
 Transform:
   m_ObjectHideFlags: 0
@@ -1447,6 +1448,7 @@ MonoBehaviour:
   quest: {fileID: 0}
   quest2: {fileID: 0}
   quest3: {fileID: 0}
+  quest4: {fileID: 1366601062}
 --- !u!114 &374391890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1943,6 +1945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quest2: {fileID: 0}
   quest3: {fileID: 0}
+  quest4: {fileID: 1366601062}
   EnemyPrehab: {fileID: 3885279415868402851, guid: 97e8327c115acde48ba437c9d51c88d5,
     type: 3}
   stageUI: {fileID: 0}
@@ -2654,7 +2657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &887335392
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3038,7 +3041,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 565462764}
-        m_MethodName: OnMachimodoButton
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3047,7 +3050,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1018236865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4220,7 +4223,8 @@ MonoBehaviour:
   EnemyPrehab: {fileID: 3885279415868402851, guid: 97e8327c115acde48ba437c9d51c88d5,
     type: 3}
   stageUI: {fileID: 188401631}
-  BossEnemyPrehab: {fileID: 0}
+  BossEnemyPrehab: {fileID: 5098009345882629926, guid: e93ce44133db1614fac50019eda1f38c,
+    type: 3}
   encount: {fileID: 1485345144}
   runButton: {fileID: 0}
   fightButton: {fileID: 0}

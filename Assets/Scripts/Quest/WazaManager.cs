@@ -368,9 +368,21 @@ public class WazaManager : MonoBehaviour
 
         }
 
-        if (PlayerManager.instance.playerMapCheck == 2)
+        else if (PlayerManager.instance.playerMapCheck == 2)
         {
             SoundManager.instance.PlayBGM("Quest2");
+
+        }
+
+        else if (PlayerManager.instance.playerMapCheck == 3)
+        {
+            SoundManager.instance.PlayBGM("Quest3");
+
+        }
+
+        else if (PlayerManager.instance.playerMapCheck == 4)
+        {
+            SoundManager.instance.PlayBGM("Quest4");
 
         }
 

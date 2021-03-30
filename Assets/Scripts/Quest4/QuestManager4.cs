@@ -90,6 +90,7 @@ public class QuestManager4 : MonoBehaviour
 
     IEnumerator Seaching()
     {
+        stageUI.tier++;
         int random;
         random = encount.r;
         Debug.Log(random);
@@ -245,7 +246,7 @@ public class QuestManager4 : MonoBehaviour
             PlayerManager.instance.maxHp += 20;
             PlayerManager.instance.strength += 4;
 
-            DialogTextManager.instance.SetScenarios(new string[] { "レベルアップ！\n気持ち強くなった！\nHP+15\nSTR+3" });
+            DialogTextManager.instance.SetScenarios(new string[] { "レベルアップ！\n気持ち強くなった！\nHP+20\nSTR+4" });
             // SoundManager.instance.PlaySE(0);
 
             PlayerUIManager.instance.UpdateUI(PlayerManager.instance);

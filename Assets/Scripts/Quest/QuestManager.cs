@@ -14,6 +14,8 @@ public class QuestManager : MonoBehaviour
 
     public QuestManager2 quest2;
     public QuestManager3 quest3;
+    public QuestManager4 quest4;
+
 
 
     public GameObject EnemyPrehab;
@@ -202,7 +204,7 @@ public class QuestManager : MonoBehaviour
             stageUI.HideButtons();
         }
 
-        if (PlayerManager.instance.playerMapCheck == 3)
+        else if (PlayerManager.instance.playerMapCheck == 3)
         {
             stageUI3.HideButtons();
         }
@@ -234,9 +236,14 @@ public class QuestManager : MonoBehaviour
             quest2.LevelUpForBattle2();
         }
 
-        if (PlayerManager.instance.playerMapCheck == 3)
+        else if (PlayerManager.instance.playerMapCheck == 3)
         {
             quest3.LevelUpForBattle3();
+        }
+
+        else if (PlayerManager.instance.playerMapCheck == 4)
+        {
+            quest4.LevelUpForBattle4();
         }
 
         else
