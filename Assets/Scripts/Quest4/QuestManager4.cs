@@ -95,7 +95,7 @@ public class QuestManager4 : MonoBehaviour
         random = encount.r;
         Debug.Log(random);
 
-        DialogTextManager.instance.SetScenarios(new string[] { "自分は瓦礫の山を進む。" });
+        DialogTextManager.instance.SetScenarios(new string[] { "自分はどぶの中を進む。" });
         questBG.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 1f)
         .OnComplete(() => questBG.transform.localScale = new Vector3(1, 1, 1));
 
@@ -216,7 +216,7 @@ public class QuestManager4 : MonoBehaviour
             bossCheck++;
             SoundManager.instance.PlayBGM("BossBattle4");
 
-            DialogTextManager.instance.SetScenarios(new string[] { "瞬間、悪寒を覚える。\n自分はこの戦いに持てる\n全てを尽くすまで。" });
+            DialogTextManager.instance.SetScenarios(new string[] { "出口を塞ぐ魔物を見る。\nかなりの強敵であることを\n本能的に理解した。" });
             HideAllQuest4Button();
 
             GameObject enemyObj = Instantiate(BossEnemyPrehab);
@@ -273,6 +273,20 @@ public class QuestManager4 : MonoBehaviour
     public void CallHideButton()
     {
         stageUI.HideButtons();
+    }
+
+    public void ShowAreaMessage()
+    {
+        int randomArea;
+        randomArea = Random.Range(0, 3);
+        if(randomArea ==0)
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "へどろが衣服につく。\n　　　......帰りたい。" });
+        }
+        if (randomArea == 1)
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "肌に刺すような痛みが染み渡る。\n長居はすべきではない。\n早く脱出しなければ。\n" });
+        }
     }
 
 }

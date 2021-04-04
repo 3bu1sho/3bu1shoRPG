@@ -17,7 +17,6 @@ public class StageUIManager4 : MonoBehaviour
     public GameObject BossBattleButton;
 
 
-    int stageCurrent;
     public Text tierText;
     public int tier;
     private void Start()
@@ -44,7 +43,7 @@ public class StageUIManager4 : MonoBehaviour
     }
     public void ShowButtons()
     {
-        if (stageCurrent == 20)
+        if (tier == 20)
         {
             BossBattleButton.SetActive(true);
             tierText.text = string.Format("帰還");
