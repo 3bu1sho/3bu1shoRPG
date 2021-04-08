@@ -118,6 +118,7 @@
     <Compile Include="Assets\Scripts\Quest4\QuestManager4.cs" />
     <Compile Include="Assets\Scripts\Quest4\StageUIManager4.cs" />
     <Compile Include="Assets\Scripts\Quest5\QuestManager5.cs" />
+    <Compile Include="Assets\Scripts\Quest5\StageUIManager5.cs" />
     <Compile Include="Assets\Scripts\SaveInt.cs" />
     <Compile Include="Assets\Scripts\SceneTransitionManager.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />

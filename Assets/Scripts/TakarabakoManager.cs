@@ -23,6 +23,8 @@ public class TakarabakoManager : MonoBehaviour
     public QuestManager2 quest2;
     public QuestManager3 quest3;
     public QuestManager4 quest4;
+    public QuestManager5 quest5;
+
 
 
 
@@ -86,6 +88,11 @@ public class TakarabakoManager : MonoBehaviour
         else if (PlayerManager.instance.playerMapCheck == 4)
         {
             quest4.OnToMapOKButton();
+        }
+
+        else if (PlayerManager.instance.playerMapCheck == 5)
+        {
+            quest5.OnToMapOKButton();
         }
 
         hiButton.SetActive(false);

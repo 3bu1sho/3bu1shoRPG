@@ -15,6 +15,8 @@ public class QuestManager : MonoBehaviour
     public QuestManager2 quest2;
     public QuestManager3 quest3;
     public QuestManager4 quest4;
+    public QuestManager5 quest5;
+
 
 
 
@@ -22,6 +24,8 @@ public class QuestManager : MonoBehaviour
     public StageUIManager stageUI;
     public StageUIManager3 stageUI3;
     public StageUIManager4 stageUI4;
+    public StageUIManager5 stageUI5;
+
 
 
     public BattleManager battleManager;
@@ -244,6 +248,10 @@ public class QuestManager : MonoBehaviour
         else if (PlayerManager.instance.playerMapCheck == 4)
         {
             quest4.LevelUpForBattle4();
+        }
+        else if (PlayerManager.instance.playerMapCheck == 5)
+        {
+            quest5.LevelUpForBattle5();
         }
 
         else
