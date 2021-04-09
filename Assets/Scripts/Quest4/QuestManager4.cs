@@ -266,6 +266,7 @@ public class QuestManager4 : MonoBehaviour
         DialogTextManager.instance.SetScenarios(new string[] { "クリア！！おめでとう！\n＊プリンセスを5手に入れた！" });
         SoundManager.instance.StopBGM();
         SoundManager.instance.PlaySE(2);
+        PlayerManager.instance.bossCount4++;
 
         machimodoButton.SetActive(true);
     }

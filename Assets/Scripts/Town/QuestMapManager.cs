@@ -15,6 +15,11 @@ public class QuestMapManager : MonoBehaviour
     public GameObject yukiYesButton;
     public GameObject haikyoButton;
     public GameObject haikyoYesButton;
+    public GameObject dokutsuButton;
+    public GameObject dokutsuYesButton;
+    public GameObject shindenButton;
+    public GameObject shindenYesButton;
+
 
 
     public GameObject tansakuButton;
@@ -33,6 +38,10 @@ public class QuestMapManager : MonoBehaviour
         moriButton.SetActive(true);
         yukiButton.SetActive(true);
         haikyoButton.SetActive(true);
+        dokutsuButton.SetActive(true);
+        shindenButton.SetActive(true);
+
+
 
     }
 
@@ -45,6 +54,11 @@ public class QuestMapManager : MonoBehaviour
         yukiYesButton.SetActive(false);
         haikyoButton.SetActive(false);
         haikyoYesButton.SetActive(false);
+        dokutsuButton.SetActive(false);
+        shindenButton.SetActive(false);
+        dokutsuYesButton.SetActive(false);
+        shindenYesButton.SetActive(false);
+
 
         noButton.SetActive(false);
 
@@ -83,11 +97,13 @@ public class QuestMapManager : MonoBehaviour
 
     }
 
+
+
     public void OnHaikyoButton()
     {
         SoundManager.instance.PlaySE(0);
 
-        if (SaveInt.instance.yukiClear==0)
+        if (SaveInt.instance.yukiClear == 0)
         {
             DialogTextManager.instance.SetScenarios(new string[] { "門番\n「ここには死神が出る。\nあんたの手には負えない。\nやめておけ」\n難易度:★★★☆☆\n＊実力を示す必要があるようだ..." });
         }
@@ -96,7 +112,34 @@ public class QuestMapManager : MonoBehaviour
             HideAllQuestButton();
             haikyoYesButton.SetActive(true);
             noButton.SetActive(true);
-            DialogTextManager.instance.SetScenarios(new string[] { "門番\n「ここでは方向感覚が機能しない。\n万端で挑めよ」\n難易度:★★☆☆☆" });
+            DialogTextManager.instance.SetScenarios(new string[] { "門番\n「ここは危険な廃墟だ。\n死神が出ると聞いたが...」\n難易度:★★★☆☆" });
+        }
+    }
+
+    public void OnDokutsuButton()
+    {
+        SoundManager.instance.PlaySE(0);
+
+        HideAllQuestButton();
+        dokutsuYesButton.SetActive(true);
+        noButton.SetActive(true);
+        DialogTextManager.instance.SetScenarios(new string[] { "門番\n「ここは入った途端落ちてしまうらしい。\n詳しいことは分からないが、\n賢いやつは行かないだろう」\n難易度:★★★★☆" });
+    }
+
+    public void OnShindenButton()
+    {
+        SoundManager.instance.PlaySE(0);
+
+        if (PlayerManager.instance.bossCount5==0)
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "門番\n「...」\n門番は黙りこくっている。\n難易度:★★★★★\n＊実力を示す必要があるようだ..." });
+        }
+        else
+        {
+            HideAllQuestButton();
+            dokutsuYesButton.SetActive(true);
+            noButton.SetActive(true);
+            DialogTextManager.instance.SetScenarios(new string[] { "門番\n「行くのか...」\n難易度:★★★★★" });
         }
     }
 
@@ -121,6 +164,22 @@ public class QuestMapManager : MonoBehaviour
         SoundManager.instance.PlaySE(0);
         SceneTransitionManager.instance.LoadTo("Quest3");
         PlayerManager.instance.playerMapCheck = 3;
+
+    }
+
+    public void OnDokutsuYesButton()
+    {
+        SoundManager.instance.PlaySE(0);
+        SceneTransitionManager.instance.LoadTo("Quest4");
+        PlayerManager.instance.playerMapCheck = 4;
+
+    }
+
+    public void OnShindenYesButton()
+    {
+        SoundManager.instance.PlaySE(0);
+        SceneTransitionManager.instance.LoadTo("Quest5");
+        PlayerManager.instance.playerMapCheck = 5;
 
     }
 }

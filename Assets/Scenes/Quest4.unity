@@ -1609,7 +1609,7 @@ PrefabInstance:
     - target: {fileID: 3995831927193277776, guid: db0f16c90bd3b10418d973b6dd18ac4b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7825117854991899779, guid: db0f16c90bd3b10418d973b6dd18ac4b,
         type: 3}
@@ -1784,6 +1784,7 @@ MonoBehaviour:
   quest2: {fileID: 0}
   quest3: {fileID: 0}
   quest4: {fileID: 1366601062}
+  quest5: {fileID: 0}
 --- !u!114 &374391890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2281,11 +2282,13 @@ MonoBehaviour:
   quest2: {fileID: 0}
   quest3: {fileID: 0}
   quest4: {fileID: 1366601062}
+  quest5: {fileID: 0}
   EnemyPrehab: {fileID: 3885279415868402851, guid: 97e8327c115acde48ba437c9d51c88d5,
     type: 3}
   stageUI: {fileID: 0}
   stageUI3: {fileID: 0}
   stageUI4: {fileID: 188401631}
+  stageUI5: {fileID: 0}
   battleManager: {fileID: 194091968}
   waza: {fileID: 709343774}
   enemyUI: {fileID: 1854149348}

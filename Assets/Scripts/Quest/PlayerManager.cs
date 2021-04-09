@@ -15,6 +15,8 @@ public class PlayerManager : MonoBehaviour
     public int bossCount;
     public int bossCount2;
     public int bossCount3;
+    public int bossCount4;
+    public int bossCount5;
     public int magaChike;
     public int luck;
     public int dexterity;
