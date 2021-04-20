@@ -123,14 +123,14 @@ public class QuestMapManager : MonoBehaviour
         HideAllQuestButton();
         dokutsuYesButton.SetActive(true);
         noButton.SetActive(true);
-        DialogTextManager.instance.SetScenarios(new string[] { "門番\n「ここは入った途端落ちてしまうらしい。\n詳しいことは分からないが、\n賢いやつは行かないだろう」\n難易度:★★★★☆" });
+        DialogTextManager.instance.SetScenarios(new string[] { "門番\n「ここは入った途端落ちてしまう\nらしい。詳しいことは分からないが、\n賢いやつは行かないだろう」\n難易度:★★★★☆" });
     }
 
     public void OnShindenButton()
     {
         SoundManager.instance.PlaySE(0);
 
-        if (PlayerManager.instance.bossCount5==0)
+        if (PlayerManager.instance.bossCount4==0)
         {
             DialogTextManager.instance.SetScenarios(new string[] { "門番\n「...」\n門番は黙りこくっている。\n難易度:★★★★★\n＊実力を示す必要があるようだ..." });
         }
