@@ -2546,10 +2546,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quest2: {fileID: 0}
   quest3: {fileID: 1938449449}
+  quest4: {fileID: 0}
+  quest5: {fileID: 0}
   EnemyPrehab: {fileID: 3885279415868402851, guid: 97e8327c115acde48ba437c9d51c88d5,
     type: 3}
   stageUI: {fileID: 0}
   stageUI3: {fileID: 2118597241}
+  stageUI4: {fileID: 0}
+  stageUI5: {fileID: 0}
   battleManager: {fileID: 575947743}
   waza: {fileID: 198707343}
   enemyUI: {fileID: 680842541}
@@ -8267,6 +8271,8 @@ MonoBehaviour:
   quest: {fileID: 0}
   quest2: {fileID: 0}
   quest3: {fileID: 1938449449}
+  quest4: {fileID: 0}
+  quest5: {fileID: 0}
 --- !u!1 &1793779917
 GameObject:
   m_ObjectHideFlags: 0

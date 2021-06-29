@@ -49,7 +49,9 @@ public class StageUIManager5 : MonoBehaviour
         if (tier == 5)
         {
             BossBattleButton.SetActive(true);
+            BackButton.SetActive(true);
             tierText.text = string.Format("ラストバトル");
+            DialogTextManager.instance.SetScenarios(new string[] { "これが最後なのだと知覚する。\n\n* かつてないほどの強敵です。\n準備はよろしいですか？" });
         }
         else if(tier==1)
         {

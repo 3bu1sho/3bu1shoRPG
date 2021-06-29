@@ -12113,7 +12113,7 @@ PrefabInstance:
     - target: {fileID: 3995831927193277776, guid: db0f16c90bd3b10418d973b6dd18ac4b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4237905593055546566, guid: db0f16c90bd3b10418d973b6dd18ac4b,
         type: 3}
@@ -17740,7 +17740,7 @@ PrefabInstance:
     - target: {fileID: 5713883351215519746, guid: 0d8177cfd80a67241a5f7766f1f7fb64,
         type: 3}
       propertyPath: jobCheck
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5713883351215519747, guid: 0d8177cfd80a67241a5f7766f1f7fb64,
         type: 3}

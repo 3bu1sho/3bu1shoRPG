@@ -94,6 +94,15 @@ private void Awake()
             case "BossBattle4":
                 audioSourceBGM.clip = audioClipsBGM[14];
                 break;
+            case "Quest5":
+                audioSourceBGM.clip = audioClipsBGM[15];
+                break;
+            case "Battle5":
+                audioSourceBGM.clip = audioClipsBGM[16];
+                break;
+            case "BossBattle5":
+                audioSourceBGM.clip = audioClipsBGM[17];
+                break;
 
 
         }

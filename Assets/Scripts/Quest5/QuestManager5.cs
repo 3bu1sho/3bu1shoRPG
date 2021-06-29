@@ -192,7 +192,7 @@ public class QuestManager5 : MonoBehaviour
 
     public void EncountProcess()
     {
-        SoundManager.instance.PlayBGM("Battle4");
+        SoundManager.instance.PlayBGM("Battle5");
         DialogTextManager.instance.SetScenarios(new string[] { "敵だよ！" });
         stageUI.HideButtons();
         GameObject enemyObj = Instantiate(EnemyPrehab);
@@ -226,7 +226,7 @@ public class QuestManager5 : MonoBehaviour
         {
             PlayerManager.instance.bossCount3++;
             bossCheck++;
-            SoundManager.instance.PlayBGM("BossBattle4");
+            SoundManager.instance.PlayBGM("BossBattle5");
 
             DialogTextManager.instance.SetScenarios(new string[] { "出口を塞ぐ魔物を見る。\nかなりの強敵であることを\n本能的に理解した。" });
             HideAllQuest4Button();

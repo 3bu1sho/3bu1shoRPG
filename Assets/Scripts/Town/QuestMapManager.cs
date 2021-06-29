@@ -137,7 +137,7 @@ public class QuestMapManager : MonoBehaviour
         else
         {
             HideAllQuestButton();
-            dokutsuYesButton.SetActive(true);
+            shindenYesButton.SetActive(true);
             noButton.SetActive(true);
             DialogTextManager.instance.SetScenarios(new string[] { "門番\n「行くのか...」\n難易度:★★★★★" });
         }

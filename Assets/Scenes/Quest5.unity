@@ -1804,7 +1804,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &515965394
 GameObject:
@@ -2152,7 +2152,7 @@ RectTransform:
   - {fileID: 1013820163}
   - {fileID: 14166958}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2234,7 +2234,7 @@ PrefabInstance:
     - target: {fileID: 3995831927193277776, guid: db0f16c90bd3b10418d973b6dd18ac4b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7825117854991899779, guid: db0f16c90bd3b10418d973b6dd18ac4b,
         type: 3}
@@ -2274,7 +2274,7 @@ PrefabInstance:
     - target: {fileID: 7825117854991899779, guid: db0f16c90bd3b10418d973b6dd18ac4b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7825117854991899779, guid: db0f16c90bd3b10418d973b6dd18ac4b,
         type: 3}
@@ -2452,7 +2452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
+  m_Color: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2778,7 +2778,7 @@ PrefabInstance:
     - target: {fileID: 5713883351215519747, guid: 0d8177cfd80a67241a5f7766f1f7fb64,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5713883351215519747, guid: 0d8177cfd80a67241a5f7766f1f7fb64,
         type: 3}
@@ -4384,10 +4384,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questBG: {fileID: 1598145098}
   takarabako: {fileID: 1867740837}
-  EnemyPrehab: {fileID: 1324556351716729463, guid: 501825f7347d0ee42abef0b449a87da6,
+  EnemyPrehab: {fileID: 7542220096304807459, guid: 13bace1945bbff347b474d8f039f45b0,
     type: 3}
   stageUI: {fileID: 500782569}
-  BossEnemyPrehab: {fileID: 1324556351716729463, guid: 501825f7347d0ee42abef0b449a87da6,
+  BossEnemyPrehab: {fileID: 2569559077790660398, guid: 79131d0158b65d14583ddf2adbe48a72,
     type: 3}
   encount: {fileID: 1133890844}
   runButton: {fileID: 769816621}
@@ -5430,7 +5430,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1598145098
 GameObject:
@@ -5864,7 +5864,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6066,7 +6066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
+  m_Color: {r: 0.8509804, g: 0.8509804, b: 0.8509804, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6745,7 +6745,7 @@ RectTransform:
   - {fileID: 375831955}
   - {fileID: 1135619080}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

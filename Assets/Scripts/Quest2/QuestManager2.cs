@@ -228,7 +228,6 @@ public class QuestManager2 : MonoBehaviour
         questBGSpriteRenderer.DOFade(0, 1f)
             .OnComplete(() => questBGSpriteRenderer.DOFade(1, 0));
 
-        PlayerManager.instance.bossCount2++;
         StartCoroutine(BossBattle());
     }
 
@@ -237,7 +236,7 @@ public class QuestManager2 : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        if(bossCount>0)
+        if(PlayerManager.instance.bossCount2 > 0)
         {
             DialogTextManager.instance.SetScenarios(new string[] { "そういえばボス倒してた。" });
             returnBossBattleButton.SetActive(true);
@@ -257,6 +256,7 @@ public class QuestManager2 : MonoBehaviour
             waza.SetUp(enemy);
 
             bossCount++;
+            PlayerManager.instance.bossCount2++;
         }
     }
 

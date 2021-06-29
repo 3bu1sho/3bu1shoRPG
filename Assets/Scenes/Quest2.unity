@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &25389874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2285,9 +2285,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quest2: {fileID: 1938449449}
+  quest3: {fileID: 0}
+  quest4: {fileID: 0}
+  quest5: {fileID: 0}
   EnemyPrehab: {fileID: 3885279415868402851, guid: 97e8327c115acde48ba437c9d51c88d5,
     type: 3}
   stageUI: {fileID: 2118597241}
+  stageUI3: {fileID: 0}
+  stageUI4: {fileID: 0}
+  stageUI5: {fileID: 0}
   battleManager: {fileID: 575947743}
   waza: {fileID: 198707343}
   enemyUI: {fileID: 680842541}
@@ -2490,6 +2496,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   enemyUI: {fileID: 680842541}
   questmanager: {fileID: 524594826}
+  quest3: {fileID: 0}
   playerDamagePanel: {fileID: 519420032}
   ojamaPanel: {fileID: 151547444}
   scene: {fileID: 217779724}
@@ -5551,6 +5558,8 @@ MonoBehaviour:
   quest: {fileID: 0}
   quest2: {fileID: 1938449449}
   quest3: {fileID: 0}
+  quest4: {fileID: 0}
+  quest5: {fileID: 0}
 --- !u!1 &1793779917
 GameObject:
   m_ObjectHideFlags: 0

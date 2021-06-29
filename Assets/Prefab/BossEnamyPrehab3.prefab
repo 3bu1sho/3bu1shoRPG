@@ -124,10 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1cb596cf524ed942b42b885ad5807e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1500
-  at: 60
+  hp: 2000
+  at: 140
   accuracy: 10
-  agility: 3
+  agility: 5
   dexterity: 0
   name: "\u30B0\u30EA\u30E0\u30EA\u30FC\u30D1\u30FC"
   hitEffect: {fileID: 4613607366504764386, guid: ec2aef66bfa2aae40801a4c0750061cb,

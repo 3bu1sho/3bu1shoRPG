@@ -311,6 +311,17 @@ public class BattleManager : MonoBehaviour
 
         }
 
+        else if (PlayerManager.instance.playerMapCheck == 5)
+        {
+            SoundManager.instance.PlayBGM("Quest5");
+            Debug.Log("EndBattle");
+            questmanager.EndBattle();
+            Destroy(enemy.gameObject);
+            enemyUI.gameObject.SetActive(false);
+            ojamaPanel.blocksRaycasts = false;
+
+        }
+
         else
         {
             SoundManager.instance.PlayBGM("Quest");
@@ -330,7 +341,23 @@ public class BattleManager : MonoBehaviour
         ojamaPanel2.blocksRaycasts = true;
         ojamaPanel.blocksRaycasts = true;
 
-        stageUI.HideButtons();
+        if (PlayerManager.instance.playerMapCheck == 1)
+        {
+            stageUI.HideButtons();
+
+
+        }
+
+        else if (PlayerManager.instance.playerMapCheck == 2)
+        {
+            stageUI.HideButtons();
+
+        }
+        else
+        {
+
+        }
+
         yield return new WaitForSeconds(1.5f);
         ojamaPanel.blocksRaycasts = false;
 

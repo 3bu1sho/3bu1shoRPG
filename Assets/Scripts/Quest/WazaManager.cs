@@ -386,6 +386,12 @@ public class WazaManager : MonoBehaviour
 
         }
 
+        else if (PlayerManager.instance.playerMapCheck == 5)
+        {
+            SoundManager.instance.PlayBGM("Quest5");
+
+        }
+
         else
         {
             SoundManager.instance.PlayBGM("Quest");
