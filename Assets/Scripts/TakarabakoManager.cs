@@ -240,6 +240,163 @@ public class TakarabakoManager : MonoBehaviour
 
         }
 
+        else if (PlayerManager.instance.playerMapCheck == 4)
+        {
+            if (r < 29)
+            {
+                DialogTextManager.instance.SetScenarios(new string[] { "エリクサーを手に入れた！\nやったね！" });
+                GetErikusa();
+                SoundManager.instance.PlaySE(2);
+            }
+            else if (r < 44)
+            {
+                GetJoshitsuBuki();
+            }
+
+            else if (r < 59)
+            {
+                GetJoshitsuBougu();
+            }
+
+            else if (r < 67)
+            {
+                GetShinseiBuki();
+            }
+
+            else if (r < 75)
+            {
+                GetShinseiBougu();
+            }
+
+
+            else if (r < 89)
+            {
+                DialogTextManager.instance.SetScenarios(new string[] { "へどろの槍が手首を貫く。\n手の感覚がない。\n自分は這い上がれるだろうか。" });
+                PlayerManager.instance.hp -= 30 ;
+
+                SoundManager.instance.PlaySE(5);
+                playerDamagePanel.DOShakePosition(0.3f, 0.5f, 20, 0, false, true);
+
+
+                if (PlayerManager.instance.hp <= 0)
+                {
+                    PlayerManager.instance.hp = 1;
+                }
+
+                PlayerUIManager.instance.UpdateUI(PlayerManager.instance);
+                ToMapOKButton.SetActive(true);
+
+            }
+
+            else if (r < 99)
+            {
+                DialogTextManager.instance.SetScenarios(new string[] { "瞬間、鋭い刃が中から飛び出し、\n顔をかすめる。\n少しずれていれば致命傷だった。" });
+                PlayerManager.instance.hp -= 10;
+
+                SoundManager.instance.PlaySE(1);
+                playerDamagePanel.DOShakePosition(0.3f, 0.5f, 20, 0, false, true);
+
+
+                if (PlayerManager.instance.hp <= 0)
+                {
+                    PlayerManager.instance.hp = 1;
+                }
+
+                PlayerUIManager.instance.UpdateUI(PlayerManager.instance);
+                ToMapOKButton.SetActive(true);
+
+            }
+
+
+
+            else
+            {
+                DialogTextManager.instance.SetScenarios(new string[] { "...　　何もはいってないやんけ！" });
+                ToMapOKButton.SetActive(true);
+            }
+
+        }
+
+        else if (PlayerManager.instance.playerMapCheck == 5)
+        {
+            if (r < 29)
+            {
+                DialogTextManager.instance.SetScenarios(new string[] { "エリクサーを手に入れた！\nやったね！" });
+                GetErikusa();
+                SoundManager.instance.PlaySE(2);
+            }
+            else if (r < 33)
+            {
+                GetSouseiBuki();
+            }
+
+            else if (r < 37)
+            {
+                GetSouseiBougu();
+            }
+
+            else if (r < 47)
+            {
+                GetShinseiBuki();
+            }
+
+            else if (r < 57)
+            {
+                GetShinseiBougu();
+            }
+
+
+            else if (r < 78)
+            {
+                DialogTextManager.instance.SetScenarios(new string[] { "死のらせんが自分を貫く。\nこの罠は死ぬこともあり得る。" });
+                PlayerManager.instance.hp -= 40;
+
+                SoundManager.instance.PlaySE(5);
+                playerDamagePanel.DOShakePosition(0.3f, 0.5f, 20, 0, false, true);
+
+
+                if (PlayerManager.instance.hp <= 0)
+                {
+                    PlayerManager.instance.hp = 1;
+                }
+
+                PlayerUIManager.instance.UpdateUI(PlayerManager.instance);
+                ToMapOKButton.SetActive(true);
+
+            }
+
+            else if (r < 99)
+            {
+                DialogTextManager.instance.SetScenarios(new string[] { "瞬間、らせんが中から飛び出し、\n顔をかすめる。\n少しずれていれば致命傷だった。" });
+                PlayerManager.instance.hp -= 10;
+
+                SoundManager.instance.PlaySE(1);
+                playerDamagePanel.DOShakePosition(0.3f, 0.5f, 20, 0, false, true);
+
+
+                if (PlayerManager.instance.hp <= 0)
+                {
+                    PlayerManager.instance.hp = 1;
+                }
+
+                PlayerUIManager.instance.UpdateUI(PlayerManager.instance);
+                ToMapOKButton.SetActive(true);
+
+            }
+
+
+
+            else
+            {
+                DialogTextManager.instance.SetScenarios(new string[] { "...　　何もはいってないやんけ！" });
+                ToMapOKButton.SetActive(true);
+            }
+
+        }
+
+
+
+
         else
         {
             if (r < 20)
@@ -329,6 +486,85 @@ public class TakarabakoManager : MonoBehaviour
         }
     }
 
+    void GetJoshitsuBuki()
+    {
+        if(PlayerManager.instance.weaponType == 3)
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "上質な武器を見つけた。\n多分今の装備のほうが強いので\n放っておこう。" });
+            ToMapOKButton.SetActive(true);
+        }
+
+        else if (PlayerManager.instance.weaponType >= 4)
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "上質な武器を見つけた。\n多分今の装備のほうが強いので\n放っておこう。" });
+            ToMapOKButton.SetActive(true);
+
+        }
+
+        else
+        {
+            PlayerManager.instance.weaponType = 4;
+            EquipWeapon();
+            DialogTextManager.instance.SetScenarios(new string[] { "上質な武器を見つけた。\n武器としてこれほど\n頼もしいものはないだろう。" });
+            ToMapOKButton.SetActive(true);
+            SoundManager.instance.PlaySE(2);
+
+        }
+    }
+
+    void GetShinseiBuki()
+    {
+        if (PlayerManager.instance.weaponType == 3)
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "神聖な武器を見つけた。\n多分今の装備のほうが強いので\n放っておこう。" });
+            ToMapOKButton.SetActive(true);
+        }
+
+        else if (PlayerManager.instance.weaponType >= 5)
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "神聖な武器を見つけた。\n多分今の装備のほうが強いので\n放っておこう。" });
+            ToMapOKButton.SetActive(true);
+
+        }
+
+        else
+        {
+            PlayerManager.instance.weaponType = 5;
+            EquipWeapon();
+            DialogTextManager.instance.SetScenarios(new string[] { "神聖な武器を見つけた。\n武器としてこれほど\n頼もしいものはないだろう。" });
+            ToMapOKButton.SetActive(true);
+            SoundManager.instance.PlaySE(2);
+
+        }
+    }
+
+    void GetSouseiBuki()
+    {
+        if (PlayerManager.instance.weaponType == 3)
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "創世の武器を見つけた。\n多分今の装備のほうが強いので\n放っておこう。" });
+            ToMapOKButton.SetActive(true);
+        }
+
+        else if (PlayerManager.instance.weaponType >= 6)
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "創世の武器を見つけた。\n多分今の装備のほうが強いので\n放っておこう。" });
+            ToMapOKButton.SetActive(true);
+
+        }
+
+        else
+        {
+            PlayerManager.instance.weaponType = 6;
+            EquipWeapon();
+            DialogTextManager.instance.SetScenarios(new string[] { "創世の武器を見つけた。\nこれで世界が切り拓かれた\nのだろう。" });
+            ToMapOKButton.SetActive(true);
+            SoundManager.instance.PlaySE(2);
+
+        }
+    }
+
+
     void GetSoakuBougu()
     {
         if (PlayerManager.instance.armorType >= 1)
@@ -369,30 +605,136 @@ public class TakarabakoManager : MonoBehaviour
         }
     }
 
-    void EquipWeapon()
+    void GetJoshitsuBougu()
     {
-        if(PlayerManager.instance.weaponType==1)
+        if (PlayerManager.instance.armorType == 3)
         {
+            DialogTextManager.instance.SetScenarios(new string[] { "上質な防具を見つけた。\n多分今の装備のほうが強いので\n放っておこう。" });
+            ToMapOKButton.SetActive(true);
+
+        }
+
+        else if (PlayerManager.instance.armorType >= 4)
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "上質な防具を見つけた。\n多分今の装備のほうが強いので\n放っておこう。" });
+            ToMapOKButton.SetActive(true);
+
+        }
+
+        else
+        {
+            PlayerManager.instance.armorType = 4;
+            EquipArmor();
+            DialogTextManager.instance.SetScenarios(new string[] { "上質な防具を見つけた。\nこれほどの品質を\n市場で見たことはない。" });
+            ToMapOKButton.SetActive(true);
+            SoundManager.instance.PlaySE(2);
+
+        }
+    }
+
+    void GetShinseiBougu()
+    {
+        if (PlayerManager.instance.armorType == 3)
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "神聖な防具を見つけた。\n多分今の装備のほうが強いので\n放っておこう。" });
+            ToMapOKButton.SetActive(true);
+
+        }
+
+        else if (PlayerManager.instance.armorType >= 5)
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "神聖な防具を見つけた。\n多分今の装備のほうが強いので\n放っておこう。" });
+            ToMapOKButton.SetActive(true);
+
+        }
+
+        else
+        {
+            PlayerManager.instance.armorType = 5;
+            EquipArmor();
+            DialogTextManager.instance.SetScenarios(new string[] { "神聖な防具を見つけた。\n防具としてこれほど\n頼もしいものはないだろう。" });
+            ToMapOKButton.SetActive(true);
+            SoundManager.instance.PlaySE(2);
+
+        }
+    }
+
+    void GetSouseiBougu()
+    {
+        if (PlayerManager.instance.armorType == 3)
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "神聖な防具を見つけた。\n多分今の装備のほうが強いので\n放っておこう。" });
+            ToMapOKButton.SetActive(true);
+
+        }
+
+        else if (PlayerManager.instance.armorType >= 6)
+        {
+            DialogTextManager.instance.SetScenarios(new string[] { "神聖な防具を見つけた。\n多分今の装備のほうが強いので\n放っておこう。" });
+            ToMapOKButton.SetActive(true);
+
+        }
+
+        else
+        {
+            PlayerManager.instance.armorType = 6;
+            EquipArmor();
+            DialogTextManager.instance.SetScenarios(new string[] { "創世の武器を見つけた。\nこれで世界が切り拓かれた\nのだろう。" });
+            ToMapOKButton.SetActive(true);
+            SoundManager.instance.PlaySE(2);
+
+        }
+    }
+
+
+    public void EquipWeapon()
+    {
+        if (PlayerManager.instance.weaponType == 1)
+        {
+            //粗悪
             PlayerManager.instance.weaponSlot = 1;
             PlayerManager.instance.weaponAT = 10;
         }
 
         else if (PlayerManager.instance.weaponType == 2)
         {
+            //普通
             PlayerManager.instance.weaponSlot = 1;
             PlayerManager.instance.weaponAT = 20;
         }
 
         else if (PlayerManager.instance.weaponType == 3)
         {
+            //オリハルコン
             PlayerManager.instance.weaponSlot = 1;
             PlayerManager.instance.weaponAT = 100;
+        }
+
+        else if (PlayerManager.instance.weaponType == 4)
+        {
+            //最高
+            PlayerManager.instance.weaponSlot = 1;
+            PlayerManager.instance.weaponAT = 30;
+        }
+
+        else if (PlayerManager.instance.weaponType == 5)
+        {
+            //神話
+            PlayerManager.instance.weaponSlot = 1;
+            PlayerManager.instance.weaponAT = 40;
+        }
+
+        else if (PlayerManager.instance.weaponType == 6)
+        {
+            //創世
+            PlayerManager.instance.weaponSlot = 1;
+            PlayerManager.instance.weaponAT = 50;
         }
         PlayerUIManager.instance.UpdateUI(PlayerManager.instance);
 
     }
 
-    void EquipArmor()
+    public void EquipArmor()
     {
         if (PlayerManager.instance.armorType == 1)
         {
@@ -410,6 +752,23 @@ public class TakarabakoManager : MonoBehaviour
             PlayerManager.instance.armorSlot = 1;
             PlayerManager.instance.armorPT = 100;
         }
+        else if (PlayerManager.instance.armorType == 4)
+        {
+            PlayerManager.instance.armorSlot = 1;
+            PlayerManager.instance.armorPT = 30;
+        }
+        else if (PlayerManager.instance.armorType == 5)
+        {
+            PlayerManager.instance.armorSlot = 1;
+            PlayerManager.instance.armorPT = 40;
+        }
+        else if (PlayerManager.instance.armorType == 6)
+        {
+            PlayerManager.instance.armorSlot = 1;
+            PlayerManager.instance.armorPT = 50;
+        }
+
+
         PlayerUIManager.instance.UpdateUI(PlayerManager.instance);
 
 

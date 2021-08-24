@@ -137,6 +137,18 @@ public class PlayerStatusManager : MonoBehaviour
         {
             weapon.text = string.Format("武器:上質");
         }
+        else if (PlayerManager.instance.weaponType == 4)
+        {
+            weapon.text = string.Format("武器:上質");
+        }
+        else if (PlayerManager.instance.weaponType == 5)
+        {
+            weapon.text = string.Format("武器:神聖");
+        }
+        else if (PlayerManager.instance.weaponType == 6)
+        {
+            weapon.text = string.Format("武器:創世");
+        }
 
         if (PlayerManager.instance.armorType == 0)
         {
@@ -153,6 +165,18 @@ public class PlayerStatusManager : MonoBehaviour
         else if (PlayerManager.instance.armorType == 3)
         {
             armor.text = string.Format("防具:上質");
+        }
+        else if (PlayerManager.instance.armorType == 4)
+        {
+            armor.text = string.Format("防具:上質");
+        }
+        else if (PlayerManager.instance.armorType == 5)
+        {
+            armor.text = string.Format("防具:神聖");
+        }
+        else if (PlayerManager.instance.armorType == 6)
+        {
+            armor.text = string.Format("防具:創世");
         }
 
         choker.text = string.Format("チョーカー:"+SaveInt.instance.choker);

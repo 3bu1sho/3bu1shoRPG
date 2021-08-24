@@ -124,7 +124,7 @@ public class PlayerManager : MonoBehaviour
     //１で有効、０で無効
 
     public int weaponType;
-    //１で粗い、２で普通、３で上質
+    //１で粗い、２で普通、３で上質、４で神聖、５で創世
 
     public int weaponAT;
 
@@ -133,7 +133,7 @@ public class PlayerManager : MonoBehaviour
     //１で有効、０で無効
 
     public int armorType;
-    //１で粗い、２で普通、３で上質
+    //１で粗い、２で普通、３で上質、４で神聖、５で創世
 
     public int armorPT;
 }
